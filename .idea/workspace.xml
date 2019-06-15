@@ -7,20 +7,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df6b4aa0-1a96-4129-a4be-3d758c33ef59" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/api/ICategoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/api/ICategoryRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/api/IDishRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/api/IDishRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/api/IOrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/api/IOrderRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/api/ISubscriptionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/api/ISubscriptionRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/api/IUserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/api/IUserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/implementation/CategoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/implementation/CategoryRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/implementation/DishRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/implementation/DishRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/implementation/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/implementation/OrderRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/implementation/SubscriptionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/implementation/SubscriptionRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/implementation/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/implementation/UserRepository.java" afterDir="false" />
-    </list>
+    <list default="true" id="df6b4aa0-1a96-4129-a4be-3d758c33ef59" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/business-logic-api/target/" />
@@ -44,8 +31,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/implementation/MainManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="26" column="38" lean-forward="true" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
+            <state relative-caret-position="315">
+              <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#438#439#0" expanded="true" />
@@ -346,7 +333,7 @@
       <option name="presentableId" value="Default" />
       <updated>1560591715761</updated>
       <workItem from="1560591720492" duration="19518000" />
-      <workItem from="1560617644339" duration="2752000" />
+      <workItem from="1560617644339" duration="4146000" />
     </task>
     <task id="LOCAL-00001" summary="database logic">
       <created>1560606354801</created>
@@ -376,15 +363,21 @@
       <option name="project" value="LOCAL" />
       <updated>1560610902151</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="ejb implementation completed">
+      <created>1560620546480</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1560620546481</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22270000" />
+    <option name="totallyTimeSpent" value="23664000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="960" height="1166" extended-state="4" />
-    <editor active="true" />
     <layout>
       <window_info id="Image Layers" order="0" />
       <window_info id="UI Designer" order="1" />
@@ -435,7 +428,8 @@
     <MESSAGE value="ejb interfaces" />
     <MESSAGE value="DAO design pattern" />
     <MESSAGE value="ejb implementation interfaces" />
-    <option name="LAST_COMMIT_MESSAGE" value="ejb implementation interfaces" />
+    <MESSAGE value="ejb implementation completed" />
+    <option name="LAST_COMMIT_MESSAGE" value="ejb implementation completed" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/pom.xml">
@@ -772,8 +766,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/implementation/MainManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="38" lean-forward="true" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
+        <state relative-caret-position="315">
+          <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#438#439#0" expanded="true" />
