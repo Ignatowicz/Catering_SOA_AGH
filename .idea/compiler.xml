@@ -9,6 +9,7 @@
         <module name="client-rest" />
         <module name="business-logic-rest" />
         <module name="client-application" />
+        <module name="dish-supplier" />
         <module name="client-soap" />
         <module name="business-logic-api" />
         <module name="business-logic-implementation" />
