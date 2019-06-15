@@ -8,7 +8,9 @@
         <outputRelativeToContentRoot value="true" />
         <module name="business-logic-implementation" />
         <module name="client-application" />
+        <module name="client-rest" />
         <module name="business-logic-api" />
+        <module name="business-logic-rest" />
       </profile>
     </annotationProcessing>
   </component>

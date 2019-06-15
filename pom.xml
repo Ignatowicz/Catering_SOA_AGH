@@ -11,6 +11,8 @@
         <module>business-logic-api</module>
         <module>business-logic-implementation</module>
         <module>client-application</module>
+        <module>business-logic-rest</module>
+        <module>client-rest</module>
     </modules>
 
     <packaging>pom</packaging>
@@ -28,5 +30,4 @@
             <scope>provided</scope>
         </dependency>
     </dependencies>
-
 </project>
