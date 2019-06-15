@@ -4,13 +4,14 @@ import pl.agh.kis.soa.catering.model.Dish;
 
 import java.util.List;
 
+
 public interface IDishRepository {
 
     void addDish(Dish dish);
 
     Dish getDish(Long dishId);
 
-    List<Dish> getAllDishes();
+    List<Object> getAllDishes();
 
     void updateDish(Dish dish);
 
@@ -23,12 +24,12 @@ public interface IDishRepository {
 
     Dish getDishDay();
 
-    List<Dish> getTopDishes();
+    List<Object> getTopDishes();
 
-    List<Dish> getAllDishesToAccept();
+    List<Object> getAllDishesToAccept();
 
-    List<Dish> getAllAcceptedDishes();
+    List<Object> getAllAcceptedDishes();
 
-    List<Dish> getAllCategoryDishes(Long categoryId);
+    List<Object> getAllCategoryDishes(Long categoryId);
 
 }

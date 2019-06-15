@@ -6,13 +6,14 @@ import pl.agh.kis.soa.catering.utils.OrderStatus;
 import java.util.Date;
 import java.util.List;
 
+
 public interface IOrderRepository {
 
     void addOrder(Order order);
 
     Order getOrder(Long orderId);
 
-    List<Order> getAllOrders();
+    List<Object> getAllOrders();
 
     void updateOrder(Order order);
 
@@ -21,11 +22,11 @@ public interface IOrderRepository {
 
     void changeOrderStatus(Long orderId, OrderStatus status);
 
-    List<Order> getAllOrdersByStatus(OrderStatus status);
+    List<Object> getAllOrdersByStatus(OrderStatus status);
 
-    List<Order> getUserOrders(Long userId);
+    List<Object> getUserOrders(Long userId);
 
-    List<Order> getUserOrderDueToDate(Long userId, Date date);
+    List<Order> getUserOrdersDueToDate(Long userId, Date date);
 
-    Object generateBill(Long orderId, Date date);
+    Object generateBill(Long userId, Date date);
 }

@@ -4,8 +4,9 @@ import pl.agh.kis.soa.catering.model.Subscription;
 import pl.agh.kis.soa.catering.model.User;
 import pl.agh.kis.soa.catering.utils.UserRole;
 
-import java.util.Date;
 import java.util.List;
+import java.util.Set;
+
 
 public interface IUserRepository {
 
@@ -13,14 +14,14 @@ public interface IUserRepository {
 
     User getUser(Long userId);
 
-    List<User> getAllUsers();
+    User getUser(String login);
+
+    List<Object> getAllUsers();
 
     void updateUser(User user);
 
     void deleteUser(Long userId);
 
-
-    User getUserByLogin(String user);
 
     User getLoggedUser();
 
@@ -34,8 +35,6 @@ public interface IUserRepository {
 
     UserRole getUserRole(Long userId);
 
-    List<Subscription> getAllUserSubscriptions(Long userId);
-
-    Object generateBill(Long userId, Date date);
-
+    Set<Subscription> getAllUserSubscriptions(Long userId);
+    
 }
