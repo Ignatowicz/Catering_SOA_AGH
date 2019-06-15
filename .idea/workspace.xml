@@ -7,7 +7,16 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df6b4aa0-1a96-4129-a4be-3d758c33ef59" name="Default Changelist" comment="" />
+    <list default="true" id="df6b4aa0-1a96-4129-a4be-3d758c33ef59" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/dao/AbstractModelDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/dao/CategoryDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/dao/DishDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/dao/OrderDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/dao/SubscriptionDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/dao/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/api/IUserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/api/IUserRepository.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/business-logic-api/target/" />
@@ -29,73 +38,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/api/IOrderRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/api/ISubscriptionRepository.java">
+        <entry file="file://$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/dao/AbstractModelDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" selection-start-line="24" selection-end-line="24" />
+            <state relative-caret-position="255">
+              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/api/ICategoryRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" selection-start-line="8" selection-end-line="16" selection-end-column="41" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/api/IDishRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/api/IUserRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="38" column="48" selection-start-line="38" selection-start-column="48" selection-end-line="38" selection-end-column="48" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/model/User.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="20" lean-forward="true" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
-              <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#0#34#1" expanded="true" />
+                <element signature="e#0#54#1" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -107,10 +58,19 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>Data</find>
+      <find>DAO</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>Dao</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -137,9 +97,15 @@
         <option value="$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/model/Order.java" />
         <option value="$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/api/ICategoryRepository.java" />
         <option value="$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/api/IDishRepository.java" />
+        <option value="$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/api/ISubscriptionRepository.java" />
         <option value="$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/api/IOrderRepository.java" />
         <option value="$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/api/IUserRepository.java" />
-        <option value="$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/api/ISubscriptionRepository.java" />
+        <option value="$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/dao/AbstractModelDao.java" />
+        <option value="$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/dao/UserDao.java" />
+        <option value="$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/dao/CategoryDao.java" />
+        <option value="$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/dao/DishDao.java" />
+        <option value="$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/dao/OrderDao.java" />
+        <option value="$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/dao/SubscriptionDao.java" />
       </list>
     </option>
   </component>
@@ -208,49 +174,47 @@
             <path>
               <item name="Catering_SOA_AGH" type="b2602c69:ProjectViewProjectNode" />
               <item name="Catering_SOA_AGH" type="462c0819:PsiDirectoryNode" />
-              <item name="business-logic-api" type="462c0819:PsiDirectoryNode" />
+              <item name="business-logic-implementation" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Catering_SOA_AGH" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Catering_SOA_AGH" type="462c0819:PsiDirectoryNode" />
+              <item name="business-logic-implementation" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Catering_SOA_AGH" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Catering_SOA_AGH" type="462c0819:PsiDirectoryNode" />
+              <item name="business-logic-implementation" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Catering_SOA_AGH" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Catering_SOA_AGH" type="462c0819:PsiDirectoryNode" />
+              <item name="business-logic-implementation" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Catering_SOA_AGH" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Catering_SOA_AGH" type="462c0819:PsiDirectoryNode" />
+              <item name="business-logic-implementation" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="catering" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Catering_SOA_AGH" type="b2602c69:ProjectViewProjectNode" />
               <item name="Catering_SOA_AGH" type="462c0819:PsiDirectoryNode" />
-              <item name="business-logic-api" type="462c0819:PsiDirectoryNode" />
+              <item name="business-logic-implementation" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="catering" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Catering_SOA_AGH" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Catering_SOA_AGH" type="462c0819:PsiDirectoryNode" />
-              <item name="business-logic-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="catering" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Catering_SOA_AGH" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Catering_SOA_AGH" type="462c0819:PsiDirectoryNode" />
-              <item name="business-logic-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Catering_SOA_AGH" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Catering_SOA_AGH" type="462c0819:PsiDirectoryNode" />
-              <item name="business-logic-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="META-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -267,7 +231,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../soa_robocze/SOA_AGH/lab4" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.37241378" />
   </component>
@@ -372,7 +336,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1560591715761</updated>
-      <workItem from="1560591720492" duration="11941000" />
+      <workItem from="1560591720492" duration="13747000" />
     </task>
     <task id="LOCAL-00001" summary="database logic">
       <created>1560606354801</created>
@@ -381,15 +345,21 @@
       <option name="project" value="LOCAL" />
       <updated>1560606354801</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="ejb interfaces">
+      <created>1560608689853</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1560608689854</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11941000" />
+    <option name="totallyTimeSpent" value="13747000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="960" height="1166" extended-state="4" />
-    <editor active="true" />
     <layout>
       <window_info id="Persistence" side_tool="true" />
       <window_info id="Web" side_tool="true" />
@@ -399,7 +369,7 @@
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Learn" order="4" />
       <window_info id="Designer" order="5" />
-      <window_info active="true" content_ui="combo" id="Project" order="6" visible="true" weight="0.3916849" />
+      <window_info active="true" content_ui="combo" id="Project" order="6" visible="true" weight="0.32056892" />
       <window_info id="Structure" order="7" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Application Servers" weight="0.3291262" />
       <window_info anchor="bottom" id="Messages" />
@@ -437,7 +407,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="database logic" />
-    <option name="LAST_COMMIT_MESSAGE" value="database logic" />
+    <MESSAGE value="ejb interfaces" />
+    <option name="LAST_COMMIT_MESSAGE" value="ejb interfaces" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/pom.xml">
@@ -510,13 +481,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/business-logic-api/src/main/resources/META-INF/persistence.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="51" selection-start-line="14" selection-start-column="51" selection-end-line="14" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/model/AbstractModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -564,10 +528,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/api/ISubscriptionRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/api/ICategoryRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" selection-start-line="8" selection-end-line="16" selection-end-column="41" />
+        <state relative-caret-position="285">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/api/IOrderRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="18" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -594,32 +578,88 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/business-logic-api/src/main/resources/META-INF/persistence.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="49" lean-forward="true" selection-start-line="6" selection-start-column="49" selection-end-line="6" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/dao/UserDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#0#82#1" expanded="true" />
+            <element signature="e#0#55#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/api/IUserRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="38" column="48" selection-start-line="38" selection-start-column="48" selection-end-line="38" selection-end-column="48" />
+        <state relative-caret-position="300">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/api/IOrderRepository.java">
+    <entry file="file://$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/dao/CategoryDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+        <state relative-caret-position="420">
+          <caret line="28" column="1" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#203#204#0" expanded="true" />
+            <element signature="e#240#241#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/api/ISubscriptionRepository.java">
+    <entry file="file://$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/dao/DishDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        <state relative-caret-position="75">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding>
+            <element signature="e#197#198#0" expanded="true" />
+            <element signature="e#230#231#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/dao/SubscriptionDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding>
+            <element signature="e#180#181#0" expanded="true" />
+            <element signature="e#221#222#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/dao/OrderDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding>
+            <element signature="e#152#153#0" expanded="true" />
+            <element signature="e#186#187#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/dao/AbstractModelDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#0#34#1" expanded="true" />
+            <element signature="e#0#54#1" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -635,7 +675,6 @@
             <option name="proportions">
               <list>
                 <option value="0.37241378" />
-                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>

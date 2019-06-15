@@ -13,14 +13,14 @@ public interface IUserRepository {
 
     User getUser(Long userId);
 
-    User getUser(String login);
-
     List<User> getAllUsers();
 
     void updateUser(User user);
 
     void deleteUser(Long userId);
 
+
+    User getUserByLogin(String user);
 
     User getLoggedUser();
 
