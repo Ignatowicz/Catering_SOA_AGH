@@ -11,6 +11,8 @@
 
     <artifactId>client-rest</artifactId>
 
+    <packaging>war</packaging>
+
     <dependencies>
         <dependency>
             <groupId>org.jboss.resteasy</groupId>

@@ -11,6 +11,8 @@
 
     <artifactId>business-logic-rest</artifactId>
 
+    <packaging>war</packaging>
+
     <build>
         <plugins>
             <plugin>

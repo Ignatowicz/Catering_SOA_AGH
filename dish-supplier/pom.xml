@@ -11,6 +11,8 @@
 
     <artifactId>dish-supplier</artifactId>
 
+    <packaging>war</packaging>
+
     <dependencies>
         <dependency>
             <groupId>pl.agh.kis.soa.catering</groupId>

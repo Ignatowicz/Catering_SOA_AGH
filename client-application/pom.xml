@@ -11,6 +11,8 @@
 
     <artifactId>client-application</artifactId>
 
+    <packaging>war</packaging>
+
     <dependencies>
         <dependency>
             <groupId>pl.agh.kis.soa.catering</groupId>
