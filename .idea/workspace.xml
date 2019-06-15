@@ -234,19 +234,7 @@
         <artifact name="business-logic-implementation:jar">
           <settings />
         </artifact>
-        <artifact name="business-logic-rest:war">
-          <settings />
-        </artifact>
         <artifact name="client-application:war">
-          <settings />
-        </artifact>
-        <artifact name="client-rest:war">
-          <settings />
-        </artifact>
-        <artifact name="client-soap:war">
-          <settings />
-        </artifact>
-        <artifact name="dish-supplier:war">
           <settings />
         </artifact>
       </deployment>
@@ -311,11 +299,7 @@
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
           <artifact name="business-logic-implementation:jar" />
-          <artifact name="business-logic-rest:war" />
           <artifact name="client-application:war" />
-          <artifact name="client-rest:war" />
-          <artifact name="client-soap:war" />
-          <artifact name="dish-supplier:war" />
         </option>
       </method>
     </configuration>
