@@ -7,6 +7,11 @@
     <groupId>pl.agh.kis.soa.catering</groupId>
     <artifactId>catering</artifactId>
     <version>1.0</version>
+    <modules>
+        <module>business-logic-api</module>
+        <module>business-logic-implementation</module>
+        <module>client-application</module>
+    </modules>
 
     <packaging>pom</packaging>
 
