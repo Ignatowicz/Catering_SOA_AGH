@@ -13,6 +13,7 @@
         <module>client-application</module>
         <module>business-logic-rest</module>
         <module>client-rest</module>
+        <module>client-soap</module>
     </modules>
 
     <packaging>pom</packaging>
