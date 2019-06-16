@@ -11,6 +11,7 @@ import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 import java.io.Serializable;
+import java.util.Set;
 
 
 @Getter
@@ -75,6 +76,8 @@ public class ModifyMenuManager implements Serializable {
             Dish dish = new Dish();
             dish.setName(dishName);
             dish.setPrice(Float.valueOf(dishPrice));
+            dish.setAccepted(false);
+            dish.setDishDay(false);
             dish.setCategory(categoryRepository.getCategory(categoryNumber));
             dishRepository.addDish(dish);
         }
@@ -88,9 +91,9 @@ public class ModifyMenuManager implements Serializable {
         dish.setId(selectedDish);
         dish.setName(dishName);
         dish.setPrice(Float.valueOf(dishPrice));
-        Category category = categoryRepository.getCategory(categoryNumber);
-        dish.setCategory(category);
+        dish.setCategory(categoryRepository.getCategory(categoryNumber));
         dishRepository.updateDish(dish);
+        categoryNumber = -1L;
         clearAll();
         return "/catering_wall.xhtml?faces-redirect=true";
     }
@@ -128,14 +131,20 @@ public class ModifyMenuManager implements Serializable {
     public String deleteCategory() {
         if (selectedCategory != null && selectedCategory != -1L)
             categoryRepository.deleteCategory(selectedCategory);
-        return null;
+        return "/catering_wall.xhtml?faces-redirect=true";
     }
 
     public String deleteDish() {
         if (selectedDish != null && selectedDish != -1L) {
+            Long categoryId = dishRepository.getDish(selectedDish).getCategory().getId();
+            Set<Dish> dishes = categoryRepository.getCategory(categoryId).getDishes();
+            dishes.remove(dishRepository.getDish(selectedDish));
+            Category category = categoryRepository.getCategory(categoryId);
+            category.setDishes(dishes);
+            categoryRepository.updateCategory(category);
             dishRepository.deleteDish(selectedDish);
         }
-        return null;
+        return "/catering_wall.xhtml?faces-redirect=true";
     }
 
 }

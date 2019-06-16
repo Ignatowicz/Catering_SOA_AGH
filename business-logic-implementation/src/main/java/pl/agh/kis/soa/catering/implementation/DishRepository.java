@@ -57,6 +57,7 @@ public class DishRepository implements IDishRepository {
                 DishDao.getInstance().updateItem(elem);
             }
         });
+
         Dish dish = DishDao.getInstance().getItem(dishId);
         dish.setDishDay(true);
         DishDao.getInstance().updateItem(dish);
@@ -64,15 +65,22 @@ public class DishRepository implements IDishRepository {
 
     @Override
     public Dish getDishDay() {
-//        List<Dish> dishes = DishDao.getInstance().getItems();
-//
-//        if (dishes.isEmpty())
-//            return null;
-//
-//        for (Dish d : dishes) {
-//            if (d.getDishDay())
-//                return d;
-//        }
+//        Optional.of((dishes.stream().noneMatch(e -> e.getDishDay().equals(true)))
+//        return Optional.of(dishes.stream()
+//                .filter(e -> e.getDishDay().equals(true))
+//                .collect(Collectors.toList())
+//                .get(0))
+//                .orElse(null
+
+        List<Dish> dishes = DishDao.getInstance().getItems();
+
+        if (dishes.isEmpty())
+            return null;
+
+        for (Dish d : dishes) {
+            if (d.getDishDay())
+                return d;
+        }
         return null;
     }
 

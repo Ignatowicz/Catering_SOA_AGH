@@ -99,6 +99,27 @@ public class LoginManager implements Serializable {
         return "/login.xhtml?faces-redirect=true";
     }
 
+    public Boolean checkAdmin() {
+        return loggedUser.getRole().equals(UserRole.ADMIN);
+    }
+
+    public Boolean checkManager() {
+        return loggedUser.getRole().equals(UserRole.MANAGER);
+    }
+
+    public Boolean checkEmployee() {
+        return loggedUser.getRole().equals(UserRole.EMPLOYEE);
+    }
+
+    public Boolean checkSupplier() {
+        return loggedUser.getRole().equals(UserRole.SUPPLIER);
+    }
+
+    public Boolean checkCustomer() {
+        return loggedUser.getRole().equals(UserRole.CUSTOMER);
+    }
+
+
     public static void initDB() {
 //        InitDatabase.getInstance();
 //        InitDatabase initDatabase = new InitDatabase();

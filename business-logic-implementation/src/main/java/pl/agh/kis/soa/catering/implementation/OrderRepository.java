@@ -100,6 +100,9 @@ public class OrderRepository implements IOrderRepository {
     }
 
     private Float countAll(List<Order> orderList) {
+        System.out.println(orderList.toString());
+        if (!orderList.isEmpty())
+            System.out.println(orderList.get(0).getStatus());
         return (float) orderList.stream().mapToDouble(Order::getPrice).sum();
     }
 

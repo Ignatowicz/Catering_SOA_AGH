@@ -8,6 +8,7 @@ import pl.agh.kis.soa.catering.model.Dish;
 import pl.agh.kis.soa.catering.model.Order;
 import pl.agh.kis.soa.catering.model.Subscription;
 import pl.agh.kis.soa.catering.utils.OrderStatus;
+import pl.agh.kis.soa.catering.utils.UserRole;
 
 import javax.annotation.ManagedBean;
 import javax.ejb.EJB;
@@ -46,12 +47,20 @@ public class MenuManager implements Serializable {
     private List<Dish> dishesOrder;
 
     private boolean cyclicOrder;
-    private String orderDetails;
+//    private String orderDetails;
     private Date orderDeliver;
     private List<Date> cyclicOrderDeliver;
     private Set<Dish> selectedDishesView;
     private int deliverHour;
     private int deliverMinute;
+
+    private final OrderStatus ORDERED = OrderStatus.ORDERED;
+
+//    private final UserRole ADMIN = UserRole.ADMIN;
+//    private final UserRole MANAGER = UserRole.MANAGER;
+//    private final UserRole EMPLOYEE = UserRole.EMPLOYEE;
+//    private final UserRole SUPPLIER = UserRole.SUPPLIER;
+//    private final UserRole CUSTOMER = UserRole.CUSTOMER;
 
     public MenuManager() {
         dishesOrder = new ArrayList<Dish>();
@@ -79,7 +88,7 @@ public class MenuManager implements Serializable {
 
     public void addSelectedDishToOrder() {
         if (idSelectedDish != null) {
-            Dish dish = (Dish) dishRepository.getDish(idSelectedDish);
+            Dish dish = dishRepository.getDish(idSelectedDish);
             if (dish != null)
                 dishesOrder.add(dish);
         }
@@ -91,8 +100,9 @@ public class MenuManager implements Serializable {
 
     public Float sumOrderPrice() {
         Float sum = 0.0f;
-        for (Dish dish : dishesOrder)
+        for (Dish dish : dishesOrder) {
             sum += dish.getPrice();
+        }
         return sum;
     }
 
@@ -108,7 +118,6 @@ public class MenuManager implements Serializable {
         if (dt != null)
             cyclicOrderDeliver.remove(dt);
     }
-
 
     public String makeOrder(Long userID) {
         if (cyclicOrder)
@@ -140,6 +149,7 @@ public class MenuManager implements Serializable {
         order.setStatus(OrderStatus.ORDERED);
         order.setDishes(dishesOrder);
         order.setDate(orderDeliver);
+        order.setPrice(sumOrderPrice());
         orderRepository.addOrder(order);
         clearAll();
         return redirectToPage("catering_wall");
@@ -151,7 +161,7 @@ public class MenuManager implements Serializable {
 
     public void clearAll() {
         orderDeliver = null;
-        orderDetails = null;
+//        orderDetails = null;
         cyclicOrder = false;
         cyclicOrderDeliver.clear();
         selectedDishesView.clear();
@@ -178,6 +188,10 @@ public class MenuManager implements Serializable {
 
     public static String redirectToPage(String pageName) {
         return "/" + pageName + ".xhtml?faces-redirect=true";
+    }
+
+    public void cancelOrder(Long orderId) {
+        orderRepository.deleteOrder(orderId);
     }
 
 }

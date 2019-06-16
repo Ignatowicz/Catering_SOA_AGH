@@ -31,7 +31,7 @@
 
             <h:outputText value="Wybierz kategorię"/>
             <h:selectOneListbox value="#{MenuManager.idSelectedCategory}">
-                <f:selectItem itemLabel="" itemValue="null"/>
+                <f:selectItem itemLabel="" itemValue="#{null}"/>
                 <c:forEach var="ct" items="#{MenuManager.getAllCategories()}" >
                     <f:selectItem itemLabel="#{ct.name}" itemValue="#{ct.id}"/>
                 </c:forEach>
@@ -40,7 +40,7 @@
 
             <h:outputText value="Wybierz danie"/>
             <h:selectOneListbox value="#{MenuManager.idSelectedDish}">
-                <f:selectItem itemLabel="" itemValue="null"/>
+                <f:selectItem itemLabel="" itemValue="#{null}"/>
                 <c:forEach var="dish" items="#{MenuManager.selectedDishesView}" >
                     <f:selectItem itemLabel="#{dish.name}" itemValue="#{dish.id}"/>
                 </c:forEach>
@@ -85,7 +85,7 @@
 
 
 
-    <h:form rendered="#{LoginManager.checkRoleAuthority('EMPLOYEE')}">
+    <h:form rendered="#{LoginManager.checkEmployee()}">
         <h:commandButton value="Modyfikuj kategorię" action="#{MenuManager.redirectToPage('add_category')}"/>
         <h:commandButton value="Modyfikuj pozycję" action="#{MenuManager.redirectToPage('add_dish')}"/>
     </h:form>
