@@ -79,20 +79,23 @@ public class OrderRepository implements IOrderRepository {
 
         List<String> stringList = new ArrayList<>();
         Bill bill = new Bill();
+
         orderList.forEach(elem -> {
             elem.getDishes().forEach(dish -> {
                 stringList.add(dish.getName());
             });
         });
 
+        if (orderList.isEmpty()) {
+            bill.setAdditionalInformation("Brak zamówień w wybranym terminie.");
+        }
+
         bill.setOrderedPosition(stringList);
         bill.setGeneratedDate(new Date());
         bill.setStartDate(startDate);
         bill.setEndDate(endDate);
         bill.setPrice(countAll(orderList));
-        if (bill.getPrice().equals(0F)) {
-            bill.setAdditionalInformation("Brak zamówień w wybranym terminie.");
-        }
+
         return bill;
     }
 
