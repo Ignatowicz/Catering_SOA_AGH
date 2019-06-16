@@ -37,12 +37,11 @@ public class TopDishManager implements Serializable {
 
     public String setDishDay(Long dishId) {
         dishRepository.setDishDay(dishId);
-        return redirectToPage("catering_products");
+        return redirectToPage("catering_wall");
     }
 
     public String getDishDay() {
         Dish dish = dishRepository.getDishDay();
-
         if (dish == null)
             return "Pozycja dnia nie została jeszcze wybrana!";
         else {

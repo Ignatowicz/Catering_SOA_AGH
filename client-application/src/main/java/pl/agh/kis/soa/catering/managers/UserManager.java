@@ -85,7 +85,7 @@ public class UserManager implements Serializable {
         return "";
     }
 
-    public String getBillDish() {
+    public String getBillDishes() {
         String positions = "";
         for (String o : bill.getOrderedPosition()) {
             positions += "*" + o + "\n";

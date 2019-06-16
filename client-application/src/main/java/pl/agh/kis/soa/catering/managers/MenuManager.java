@@ -129,7 +129,7 @@ public class MenuManager implements Serializable {
         subscription.setFrequency("week");
         subscriptionRepository.addSubscription(subscription);
         clearAll();
-        return redirectToPage("catering_products");
+        return redirectToPage("catering_wall");
     }
 
     public String makeNormalOrder(Long userId) {
@@ -142,7 +142,7 @@ public class MenuManager implements Serializable {
         order.setDate(orderDeliver);
         orderRepository.addOrder(order);
         clearAll();
-        return redirectToPage("catering_products");
+        return redirectToPage("catering_wall");
     }
 
     public void approvedDish(Long dishId) {

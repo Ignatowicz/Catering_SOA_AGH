@@ -25,10 +25,10 @@
 
             <h:outputText value="Modyfikuj "/>
             <p:selectBooleanCheckbox value="#{ModifyMenuManager.modifyDish}">
-                <f:ajax event="click" execute="@this" render="@form"/>
+                <f:ajax event="click" execute="@this" render="Dania"/>
             </p:selectBooleanCheckbox>
 
-            <h:outputText value="Pozycje " rendered="#{ModifyMenuManager.modifyDish}"/>
+            <h:outputText value="Dania" rendered="#{ModifyMenuManager.modifyDish}"/>
             <p:selectOneListbox value="#{ModifyMenuManager.selectedDish}" rendered="#{ModifyMenuManager.modifyDish}">
                 <f:selectItem itemLabel="" itemValue="-1L"/>
                 <c:forEach var="ct" items="#{ModifyMenuManager.dishRepository.allDishes}" >
@@ -65,7 +65,7 @@
 
     <br/>
     <h:form>
-        <p:commandButton value="Wróć" action="#{MenuManager.redirectToPage('catering_products')}"/>
+        <p:commandButton value="Wróć" action="#{MenuManager.redirectToPage('catering_wall')}"/>
         <p:commandButton value="Wyloguj" action="#{LoginManager.logout()}"/>
     </h:form>
 

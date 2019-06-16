@@ -58,7 +58,7 @@ public class ModifyMenuManager implements Serializable {
         category.setName(categoryName);
         categoryRepository.addCategory(category);
         clearAll();
-        return "/catering_products.xhtml?faces-redirect=true";
+        return "/catering_wall.xhtml?faces-redirect=true";
     }
 
     public String modifyCategory() {
@@ -67,7 +67,7 @@ public class ModifyMenuManager implements Serializable {
         category.setName(categoryName);
         categoryRepository.updateCategory(category);
         clearAll();
-        return "/catering_products.xhtml?faces-redirect=true";
+        return "/catering_wall.xhtml?faces-redirect=true";
     }
 
     public String addNewDish() {
@@ -80,7 +80,7 @@ public class ModifyMenuManager implements Serializable {
         }
         categoryNumber = -1L;
         clearAll();
-        return "/catering_products.xhtml?faces-redirect=true";
+        return "/catering_wall.xhtml?faces-redirect=true";
     }
 
     public String modifyDish() {
@@ -92,7 +92,7 @@ public class ModifyMenuManager implements Serializable {
         dish.setCategory(category);
         dishRepository.updateDish(dish);
         clearAll();
-        return "/catering_products.xhtml?faces-redirect=true";
+        return "/catering_wall.xhtml?faces-redirect=true";
     }
 
     public String processCategoryApply() {

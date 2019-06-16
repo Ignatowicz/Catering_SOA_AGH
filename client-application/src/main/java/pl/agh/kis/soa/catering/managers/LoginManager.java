@@ -10,8 +10,6 @@ import pl.agh.kis.soa.catering.utils.UserRole;
 import javax.annotation.ManagedBean;
 import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
-import javax.faces.application.FacesMessage;
-import javax.faces.context.FacesContext;
 import javax.inject.Named;
 import java.io.Serializable;
 import java.util.List;
@@ -58,7 +56,7 @@ public class LoginManager implements Serializable {
                         if (loggedUser.getRole() == UserRole.SUPPLIER || loggedUser.getRole() == UserRole.ADMIN || loggedUser.getRole() == UserRole.MANAGER)
                             return null;
                 }
-                return "/catering_products.xhtml?faces-redirect=true";
+                return "/catering_wall.xhtml?faces-redirect=true";
             } else
                 return null;
         } else
@@ -70,18 +68,14 @@ public class LoginManager implements Serializable {
     }
 
     public String signIn() {
-        if (user.getLogin() == null || user.getPassword() == null) {
-            FacesContext.getCurrentInstance().addMessage("form:loginButton", new FacesMessage(FacesMessage.SEVERITY_ERROR, "Niepoprawny login lub haslo", "Sprawdź dane!"));
-            return "/login.xhtml?faces-redirect=true";
-        }
-        user = userRepository.login(user.getLogin(), user.getPassword());
-        if (user != null) {
-            loggedUser = (User) userRepository.getLoggedUser();
-            System.out.println("zalogowal sie: " + user.getLogin());
+        User user1 = userRepository.login(user.getLogin(), user.getPassword());
+        if (user1 != null) {
+            loggedUser = userRepository.getLoggedUser();
+            System.out.println("zalogowal sie: " + user1.getLogin());
             user = new User();
-            return "/catering_products.xhtml?faces-redirect=true";
+            return "/catering_wall.xhtml?faces-redirect=true";
         } else {
-            FacesContext.getCurrentInstance().addMessage("form:loginButton", new FacesMessage(FacesMessage.SEVERITY_ERROR, "Niepoprawny login lub haslo", "Sprawdź dane!"));
+            user = new User();
             return "/login.xhtml?faces-redirect=true";
         }
     }
@@ -92,7 +86,6 @@ public class LoginManager implements Serializable {
         if (success) {
             return "/login.xhtml?faces-redirect=true";
         } else {
-            FacesContext.getCurrentInstance().addMessage("form:registerButton", new FacesMessage(FacesMessage.SEVERITY_ERROR, "Nieprawidłowe dane przy rejestracji", "Sprawdź dane!"));
             return "/login.xhtml?faces-redirect=true";
         }
     }

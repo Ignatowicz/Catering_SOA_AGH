@@ -68,7 +68,7 @@ public class OrderRepository implements IOrderRepository {
     @Override
     public List<Order> getUserOrdersDueToDate(Long userId, Date startDate, Date endDate) {
         return OrderDao.getInstance().getItems().stream()
-                .filter(o -> o.getDate().before(startDate) && o.getDate().before(endDate))
+                .filter(o -> o.getDate().after(startDate) && o.getDate().before(endDate))
                 .filter(o -> o.getUser().getId().equals(userId))
                 .collect(Collectors.toList());
     }
