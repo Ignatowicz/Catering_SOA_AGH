@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:p="http://primefaces.org/ui">
+
+
+<h:head>
+    <title>Catering</title>
+    <f:metadata>
+        <f:viewAction action="#{LoginManager.checkAuthorization(true,'EMPLOYEE')}" />
+    </f:metadata>
+</h:head>
+
+<h:body>
+
+    <h2>Dodawanie / edycja kategorii</h2>
+
+    <h:form>
+
+        <h:panelGrid columns="2">
+
+            <h:outputText value="Modyfikuj "/>
+            <p:selectBooleanCheckbox value="#{ModifyMenuManager.modifyCategory}">
+                <f:ajax event="click" execute="@this" render="@none"/>
+            </p:selectBooleanCheckbox>
+
+            <h:outputText value="Kategorie " rendered="#{ModifyMenuManager.modifyCategory}"/>
+            <p:selectOneListbox value="#{ModifyMenuManager.selectedCategory}" rendered="#{ModifyMenuManager.modifyCategory}">
+                <f:selectItem itemLabel="" itemValue="-1L"/>
+                <c:forEach var="ct" items="#{ModifyMenuManager.dishManager.getAllCategory()}" >
+                    <f:selectItem itemLabel="#{ct.categoryName}" itemValue="#{ct.id}"/>
+                </c:forEach>
+                <f:ajax event="change" listener="#{ModifyMenuManager.updateCategoryModifyInput()}" execute="@this" render="@form"/>
+            </p:selectOneListbox>
+
+            <h:outputText value="Nazwa "/>
+            <h:inputText value="#{ModifyMenuManager.nameCategory}"/>
+
+            <h:outputText value="Opis "/>
+            <h:inputText value="#{ModifyMenuManager.descriptionCategory}"/>
+
+        </h:panelGrid>
+
+        <p:commandButton value="Zatwierdź" action="#{ModifyMenuManager.processCategoryApply()}" style="margin-right:20px;" />
+        <p:commandButton value="Usuń kategorię" action="#{ModifyMenuManager.deleteCategory()}" rendered="#{ModifyMenuManager.modifyCategory}" style="margin-right:20px;" />
+
+    </h:form>
+
+
+    <br/>
+    <h:form>
+        <p:commandButton value="Wróć" action="#{DishManager.redirectToPage('catering_products')}" style="margin-right:20px;"/>
+        <p:commandButton value="Wyloguj" action="#{LoginManager.logout()}" style="margin-right:20px;" />
+    </h:form>
+
+</h:body>
+</html>

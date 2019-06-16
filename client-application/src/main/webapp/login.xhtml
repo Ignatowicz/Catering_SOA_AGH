@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <title>Catering</title>
+</h:head>
+
+<h:body>
+    <h2>Logowanie</h2>
+
+    <h:form id="form">
+
+        <h:panelGrid columns="3">
+
+            <h:outputText value="Login "/>
+            <h:inputText id="login" value="#{LoginManager.user.login}" required="true" requiredMessage="Musisz podać login!"/>
+            <h:message for="login" style="color:red" />
+
+            <h:outputText value="Hasło "/>
+            <h:inputSecret id="password" value="#{LoginManager.user.password}" required="true" requiredMessage="Musisz podać hasło!"/>
+            <h:message for="password" style="color:red" />
+
+        </h:panelGrid>
+
+        <p:commandButton id="loginButton" value="Zaloguj" action="#{LoginManager.signIn()}"  style="margin-right:20px;" />
+        <p:commandButton value="Rejestracja" action="/registration.xhtml?faces-redirect=true" immediate="true"  style="margin-right:20px;" />
+
+        <p:messages id="msgs" for="loginButton"/>
+
+    </h:form>
+</h:body>
+</html>
