@@ -59,7 +59,7 @@
     <h3>Zamówienia</h3>
 
     <h4>Jednorazowe</h4>
-        <h:dataTable id="order" value="#{UserManager.orderManager.getOrdersForUser(LoginManager.loggedUser.id)}" var="var" border="1" cellpadding="6px">
+        <h:dataTable id="order" value="#{UserManager.orderRepository.getOrdersForUser(LoginManager.loggedUser.id)}" var="var" border="1" cellpadding="6px">
             <h:column>
                 <f:facet name="header">Data zamówienia</f:facet>
                 #{var.orderDate}
@@ -82,7 +82,7 @@
 
             <h:column>
                 <f:facet name="header">Wybrane pozycje</f:facet>
-                #{DishManager.getDishFromSet(var.orderedDishes)}
+                #{MenuManager.getDishFromSet(var.orderedDishes)}
             </h:column>
 
         </h:dataTable>
@@ -90,7 +90,7 @@
 
 
     <h4>Cykliczne</h4>
-        <h:dataTable id="subscription" value="#{UserManager.subscriptionManager.getSubscriptionsForUser(LoginManager.loggedUser.id)}" var="var" border="1" cellpadding="6px">
+        <h:dataTable id="subscription" value="#{UserManager.subscriptionRepository.getSubscriptionsForUser(LoginManager.loggedUser.id)}" var="var" border="1" cellpadding="6px">
 
             <!--        <h:column>-->
             <!--            <f:facet name="header">Zamawiąjący</f:facet>-->
@@ -114,7 +114,7 @@
 
             <!--        <h:column>-->
             <!--            <f:facet name="header">Wybrane pozycje</f:facet>-->
-            <!--            #{DishManager.getDishFromSet(var.subscribedDishes)}-->
+            <!--            #{MenuManager.getDishFromSet(var.subscribedDishes)}-->
             <!--        </h:column>-->
 
         </h:dataTable>
@@ -143,7 +143,7 @@
 
             <h4>Pozycje do zaakceptowania</h4>
 
-            <h:dataTable id="poisitonToApproved" value="#{DishManager.dishesOrder.toApproved}" var="var" border="1" cellpadding="6px">
+            <h:dataTable id="poisitonToApproved" value="#{MenuManager.dishesOrder.toApproved}" var="var" border="1" cellpadding="6px">
                 <h:column>
                     <f:facet name="header">Nazwa pozycji</f:facet>
                     #{var.dishName}
@@ -156,7 +156,7 @@
 
                 <h:column>
                     <f:facet name="header">Zatwierdź</f:facet>
-                    <h:commandButton value="Zaakceptuj" action="#{DishManager.approvedDish(var.id)}">
+                    <h:commandButton value="Zaakceptuj" action="#{MenuManager.approvedDish(var.id)}">
                         <f:ajax event="click" execute="@this" render="@form"/>
                     </h:commandButton>
                 </h:column>
@@ -171,7 +171,7 @@
 
             <h4>Pozycje dnia</h4>
 
-            <h:dataTable id="dayPosition" value="#{DishManager.dishManager.allDishes}" var="var" border="1" cellpadding="6px">
+            <h:dataTable id="dayPosition" value="#{MenuManager.dishRepository.allDishes}" var="var" border="1" cellpadding="6px">
                 <h:column>
                     <f:facet name="header">Nazwa pozycji</f:facet>
                     #{var.dishName}
@@ -179,7 +179,7 @@
 
                 <h:column>
                     <f:facet name="header">Ustaw pozycję </f:facet>
-                    <h:commandButton value="Ustaw" action="#{DishManager.setDayDish(var.id)}"/>
+                    <h:commandButton value="Ustaw" action="#{MenuManager.setDayDish(var.id)}"/>
                 </h:column>
 
             </h:dataTable>
@@ -188,7 +188,7 @@
 
     <br/>
     <h:form>
-        <h:commandButton value="Wróć" action="#{DishManager.redirectToPage('catering_products')}"/>
+        <h:commandButton value="Wróć" action="#{MenuManager.redirectToPage('catering_products')}"/>
         <h:commandButton value="Wyloguj" action="#{LoginManager.logout()}"/>
     </h:form>
 

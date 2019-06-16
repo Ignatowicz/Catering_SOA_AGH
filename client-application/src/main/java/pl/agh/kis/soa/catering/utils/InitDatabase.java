@@ -45,16 +45,20 @@ public class InitDatabase {
     @EJB(lookup = "java:global/business-logic-implementation/SubscriptionRepository")
     private ISubscriptionRepository subscriptionRepository;
 
-    private InitDatabase() {
+//    private InitDatabase() {
+//
+//    }
+//
+//    public static InitDatabase getInstance() {
+//        if (instance == null) {
+//            instance = new InitDatabase();
+//            instance.init();
+//        }
+//        return instance;
+//    }
 
-    }
-
-    public static InitDatabase getInstance() {
-        if (instance == null) {
-            instance = new InitDatabase();
-            instance.init();
-        }
-        return instance;
+    public InitDatabase() {
+        init();
     }
 
     private void init() {

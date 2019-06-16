@@ -7,6 +7,7 @@ import pl.agh.kis.soa.catering.model.User;
 import javax.annotation.PostConstruct;
 import javax.ejb.Singleton;
 import javax.ejb.Startup;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,7 +16,7 @@ import java.util.List;
 @Setter
 @Singleton
 @Startup
-public class MainManager {
+public class MainManager implements Serializable {
 
     private List<User> loggedUsers;
 

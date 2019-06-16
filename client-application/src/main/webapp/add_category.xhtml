@@ -32,17 +32,15 @@
             <h:outputText value="Kategorie " rendered="#{ModifyMenuManager.modifyCategory}"/>
             <p:selectOneListbox value="#{ModifyMenuManager.selectedCategory}" rendered="#{ModifyMenuManager.modifyCategory}">
                 <f:selectItem itemLabel="" itemValue="-1L"/>
-                <c:forEach var="ct" items="#{ModifyMenuManager.dishManager.getAllCategory()}" >
+                <c:forEach var="ct" items="#{ModifyMenuManager.categoryRepository.getAllCategories}" >
                     <f:selectItem itemLabel="#{ct.categoryName}" itemValue="#{ct.id}"/>
                 </c:forEach>
                 <f:ajax event="change" listener="#{ModifyMenuManager.updateCategoryModifyInput()}" execute="@this" render="@form"/>
             </p:selectOneListbox>
 
             <h:outputText value="Nazwa "/>
-            <h:inputText value="#{ModifyMenuManager.nameCategory}"/>
-
-            <h:outputText value="Opis "/>
-            <h:inputText value="#{ModifyMenuManager.descriptionCategory}"/>
+            <h:inputText value="#{ModifyMenuManager.categoryName}"/>
+            
 
         </h:panelGrid>
 
@@ -54,7 +52,7 @@
 
     <br/>
     <h:form>
-        <p:commandButton value="Wróć" action="#{DishManager.redirectToPage('catering_products')}" style="margin-right:20px;"/>
+        <p:commandButton value="Wróć" action="#{MenuManager.redirectToPage('catering_products')}" style="margin-right:20px;"/>
         <p:commandButton value="Wyloguj" action="#{LoginManager.logout()}" style="margin-right:20px;" />
     </h:form>
 

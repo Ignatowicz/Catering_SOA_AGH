@@ -2,8 +2,9 @@ package pl.agh.kis.soa.catering.managers;
 
 import lombok.Getter;
 import lombok.Setter;
-import pl.agh.kis.soa.catering.api.IUserRepository;
+import pl.agh.kis.soa.catering.api.*;
 import pl.agh.kis.soa.catering.model.User;
+import pl.agh.kis.soa.catering.utils.InitDatabase;
 import pl.agh.kis.soa.catering.utils.UserRole;
 
 import javax.annotation.ManagedBean;
@@ -23,15 +24,16 @@ import java.util.List;
 @SessionScoped
 public class LoginManager implements Serializable {
 
-    private User user;
-
-    private User loggedUser;
+    @EJB(lookup = "java:global/business-logic-implementation/UserRepository")
+    private IUserRepository userRepository;
 
     @EJB
     private MainManager mainManager;
 
-    @EJB(lookup = "java:global/business-logic-implementation/UserRepository")
-    private IUserRepository userRepository;
+    private User user;
+
+    private User loggedUser;
+
 
     private LoginManager() {
         user = new User();
