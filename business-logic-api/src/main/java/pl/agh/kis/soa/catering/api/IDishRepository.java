@@ -2,15 +2,12 @@ package pl.agh.kis.soa.catering.api;
 
 import pl.agh.kis.soa.catering.model.Dish;
 
-import java.math.BigDecimal;
 import java.util.List;
 
 
 public interface IDishRepository {
 
     void addDish(Dish dish);
-
-    void addDish(String name, BigDecimal price, Long categoryId);
 
     Dish getDish(Long dishId);
 
