@@ -25,9 +25,9 @@
         <h:panelGrid columns="2">
 
             <h:outputText value="Modyfikuj "/>
-            <p:selectBooleanCheckbox value="#{ModifyMenuManager.modifyCategory}">
-                <f:ajax event="click" execute="@this" render="Kategorie"/>
-            </p:selectBooleanCheckbox>
+            <h:selectBooleanCheckbox value="#{ModifyMenuManager.modifyCategory}">
+                <f:ajax event="click" execute="@this" render="@form"/>
+            </h:selectBooleanCheckbox>
 
             <h:outputText value="Kategorie " rendered="#{ModifyMenuManager.modifyCategory}"/>
             <p:selectOneListbox value="#{ModifyMenuManager.selectedCategory}" rendered="#{ModifyMenuManager.modifyCategory}">
