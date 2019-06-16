@@ -1,4 +1,4 @@
-package pl.agh.kis.soa.catering.implementation;
+package pl.agh.kis.soa.catering.managers;
 
 import lombok.Getter;
 import lombok.Setter;

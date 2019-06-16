@@ -10,7 +10,7 @@ import java.util.Set;
 
 public interface IUserRepository {
 
-    void register(User user);
+    Boolean register(User user);
 
     User getUser(Long userId);
 
@@ -25,7 +25,7 @@ public interface IUserRepository {
 
     User getLoggedUser();
 
-    Boolean login(String login, String password);
+    User login(String login, String password);
 
     Boolean logout();
 
