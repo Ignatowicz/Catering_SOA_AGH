@@ -32,8 +32,8 @@
             <h:outputText value="Kategorie " rendered="#{ModifyMenuManager.modifyCategory}"/>
             <p:selectOneListbox value="#{ModifyMenuManager.selectedCategory}" rendered="#{ModifyMenuManager.modifyCategory}">
                 <f:selectItem itemLabel="" itemValue="-1L"/>
-                <c:forEach var="ct" items="#{ModifyMenuManager.categoryRepository.getAllCategories}" >
-                    <f:selectItem itemLabel="#{ct.categoryName}" itemValue="#{ct.id}"/>
+                <c:forEach var="ct" items="#{ModifyMenuManager.categoryRepository.allCategories}" >
+                    <f:selectItem itemLabel="#{ct.name}" itemValue="#{ct.id}"/>
                 </c:forEach>
                 <f:ajax event="change" listener="#{ModifyMenuManager.updateCategoryModifyInput()}" execute="@this" render="@form"/>
             </p:selectOneListbox>

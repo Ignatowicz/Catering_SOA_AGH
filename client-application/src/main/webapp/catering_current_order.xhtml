@@ -25,18 +25,18 @@
         <h:panelGrid columns="2">
 
             <p>Zawartość koszyka</p>
-            <h:Table id="SelectedBuy" value="#{MenuManager.dishesOrder}" var="ps" border="1" cellpadding="6px">
+            <h:dataTable id="SelectedBuy" value="#{MenuManager.dishesOrder}" var="dish" border="1" cellpadding="6px">
                 <h:column>
                     <f:facet name="header">Nazwa</f:facet>
-                    #{ps.dishName}
+                    #{dish.name}
                 </h:column>
 
                 <h:column>
                     <f:facet name="header">Cena</f:facet>
-                    #{ps.dishPrice}
+                    #{dish.price}
                 </h:column>
 
-            </h:Table>
+            </h:dataTable>
 
 
             <p>Dodatkowe informacje</p>
@@ -71,9 +71,9 @@
             <h:outputText value=""/>
 
             <h:outputLabel rendered="#{MenuManager.cyclicOrder eq true}">Daty zamówień</h:outputLabel>
-            <h:Table id="cyclicDates" value="#{MenuManager.cyclicOrderDeliver}" var="dt" border="1" cellpadding="6px" rendered="#{MenuManager.cyclicOrder eq true}">
+            <h:dataTable id="cyclicDates" value="#{MenuManager.cyclicOrderDeliver}" var="dt" border="1" cellpadding="6px" rendered="#{MenuManager.cyclicOrder eq true}">
                 <h:column>
-                    <f:facet name="header"></f:facet>
+                    <f:facet name="header">Data</f:facet>
                     #{dt.toString()}
                 </h:column>
 
@@ -81,7 +81,7 @@
                     <f:facet name="header">Akcje</f:facet>
                     <h:commandButton value="Usuń" action="#{MenuManager.removeDateFromCyclicOrder(dt)}"/>
                 </h:column>
-            </h:Table>
+            </h:dataTable>
 
         </h:panelGrid>
 

@@ -41,7 +41,7 @@
             <h:selectOneListbox value="#{UserManager.changePasswordUser}">
                 <f:selectItem itemLabel="" itemValue="-1L"/>
                 <c:forEach var="us" items="#{UserManager.getUsersByAdmin()}">
-                    <f:selectItem itemLabel="#{us.userLogin}" itemValue="#{us.id}"/>
+                    <f:selectItem itemLabel="#{us.login}" itemValue="#{us.id}"/>
                 </c:forEach>
             </h:selectOneListbox>
 
@@ -59,65 +59,29 @@
     <h3>Zamówienia</h3>
 
     <h4>Jednorazowe</h4>
-        <h:dataTable id="order" value="#{UserManager.orderRepository.getOrdersForUser(LoginManager.loggedUser.id)}" var="var" border="1" cellpadding="6px">
-            <h:column>
-                <f:facet name="header">Data zamówienia</f:facet>
-                #{var.orderDate}
-            </h:column>
-
+        <h:dataTable id="order" value="#{UserManager.orderRepository.getUserOrders(LoginManager.loggedUser.id)}" var="var" border="1" cellpadding="6px">
             <h:column>
                 <f:facet name="header">Data realizacji</f:facet>
-                #{var.orderDeliverDate}
+                #{var.date}
             </h:column>
 
             <h:column>
                 <f:facet name="header">Cena</f:facet>
-                #{var.orderPrice}
+                #{var.price}
             </h:column>
 
             <h:column>
-                <f:facet name="header">Dodatkowe informacje</f:facet>
-                #{var.orderAdditionalInformation}
+                <f:facet name="header">Status</f:facet>
+                #{var.status}
             </h:column>
 
-            <h:column>
-                <f:facet name="header">Wybrane pozycje</f:facet>
-                #{MenuManager.getDishFromSet(var.orderedDishes)}
-            </h:column>
 
         </h:dataTable>
 
 
 
     <h4>Cykliczne</h4>
-        <h:dataTable id="subscription" value="#{UserManager.subscriptionRepository.getSubscriptionsForUser(LoginManager.loggedUser.id)}" var="var" border="1" cellpadding="6px">
 
-            <!--        <h:column>-->
-            <!--            <f:facet name="header">Zamawiąjący</f:facet>-->
-            <!--            #{var.user.userName} #{var.user.userSurname}-->
-            <!--        </h:column>-->
-
-            <!--        <h:column>-->
-            <!--            <f:facet name="header">Data złożenia</f:facet>-->
-            <!--            #{var.orderDate}-->
-            <!--        </h:column>-->
-
-            <!--        <h:column>-->
-            <!--            <f:facet name="header">Dodatkowe informacje</f:facet>-->
-            <!--            #{var.additionalInformation}-->
-            <!--        </h:column>-->
-
-            <!--        <h:column>-->
-            <!--            <f:facet name="header">Daty dostarczenia</f:facet>-->
-            <!--            #{UserManager.getDateFromSet(var.deliverDateSet)}-->
-            <!--        </h:column>-->
-
-            <!--        <h:column>-->
-            <!--            <f:facet name="header">Wybrane pozycje</f:facet>-->
-            <!--            #{MenuManager.getDishFromSet(var.subscribedDishes)}-->
-            <!--        </h:column>-->
-
-        </h:dataTable>
 
 
     <br/>
@@ -128,10 +92,10 @@
         <h:panelGrid columns="2">
 
             <h:outputText value="Od"/>
-            <p:calendar id="dateFrom" value="#{UserManager.billDateFrom}" mode="popup" />
+            <p:calendar id="dateFrom" value="#{UserManager.billStartDate}" mode="popup" />
 
             <h:outputText value="Do"/>
-            <p:calendar id="dateTo" value="#{UserManager.billDateTo}" mode="popup" />
+            <p:calendar id="dateTo" value="#{UserManager.billEndDate}" mode="popup" />
 
             <h:commandButton value="Generuj rachunek" action="#{UserManager.generateBill(LoginManager.loggedUser.id)}"/>
 
@@ -143,25 +107,6 @@
 
             <h4>Pozycje do zaakceptowania</h4>
 
-            <h:dataTable id="poisitonToApproved" value="#{MenuManager.dishesOrder.toApproved}" var="var" border="1" cellpadding="6px">
-                <h:column>
-                    <f:facet name="header">Nazwa pozycji</f:facet>
-                    #{var.dishName}
-                </h:column>
-
-                <h:column>
-                    <f:facet name="header">Opis pozycji</f:facet>
-                    #{var.dishDescription}
-                </h:column>
-
-                <h:column>
-                    <f:facet name="header">Zatwierdź</f:facet>
-                    <h:commandButton value="Zaakceptuj" action="#{MenuManager.approvedDish(var.id)}">
-                        <f:ajax event="click" execute="@this" render="@form"/>
-                    </h:commandButton>
-                </h:column>
-
-            </h:dataTable>
 
         </h:form>
 
@@ -171,18 +116,6 @@
 
             <h4>Pozycje dnia</h4>
 
-            <h:dataTable id="dayPosition" value="#{MenuManager.dishRepository.allDishes}" var="var" border="1" cellpadding="6px">
-                <h:column>
-                    <f:facet name="header">Nazwa pozycji</f:facet>
-                    #{var.dishName}
-                </h:column>
-
-                <h:column>
-                    <f:facet name="header">Ustaw pozycję </f:facet>
-                    <h:commandButton value="Ustaw" action="#{MenuManager.setDayDish(var.id)}"/>
-                </h:column>
-
-            </h:dataTable>
 
         </h:form>
 

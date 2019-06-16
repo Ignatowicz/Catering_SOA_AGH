@@ -42,7 +42,8 @@ public class UserManager implements Serializable {
     private Long changePasswordUser;
     private String changeSelectedPassword;
 
-    private Date billDate;
+    private Date billStartDate;
+    private Date billEndDate;
     private Bill bill;
 
     public UserManager() {
@@ -74,7 +75,7 @@ public class UserManager implements Serializable {
     }
 
     public String generateBill(Long userId) {
-        this.bill = (Bill) orderRepository.generateBill(userId, billDate);
+        this.bill = (Bill) orderRepository.generateBill(userId, billStartDate, billEndDate);
         if (bill != null)
             return "/bill.xhtml";
         return "";

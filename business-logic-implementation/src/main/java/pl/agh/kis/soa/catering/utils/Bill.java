@@ -14,7 +14,8 @@ import java.util.List;
 public class Bill implements Serializable {
 
     Date generatedDate;
-    Date orderDate;
+    Date startDate;
+    Date endDate;
     Float price;
     String additionalInformation;
     List<String> orderedPosition;

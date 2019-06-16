@@ -17,8 +17,6 @@ import java.io.IOException;
 import java.io.Serializable;
 import java.util.*;
 
-import static pl.agh.kis.soa.catering.utils.CommonFunctions.redirectToPage;
-
 
 @Getter
 @Setter
@@ -162,7 +160,7 @@ public class MenuManager implements Serializable {
         deliverMinute = 0;
     }
 
-    public String getAvailableDishes(Set<Object> objectSet) {
+    public String getChosenDishes(Set<Object> objectSet) {
         if (objectSet != null && objectSet.size() > 0) {
             StringBuilder dishes = new StringBuilder();
             for (Object o : objectSet) {
@@ -172,6 +170,14 @@ public class MenuManager implements Serializable {
             return dishes.toString();
         } else
             return " Brak pozycji";
+    }
+
+    public List<Dish> getAllDishesToAccept() {
+        return dishRepository.getAllDishesToAccept();
+    }
+
+    public static String redirectToPage(String pageName) {
+        return "/" + pageName + ".xhtml?faces-redirect=true";
     }
 
 }

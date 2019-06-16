@@ -66,16 +66,16 @@ public class OrderRepository implements IOrderRepository {
     }
 
     @Override
-    public List<Order> getUserOrdersDueToDate(Long userId, Date date) {
+    public List<Order> getUserOrdersDueToDate(Long userId, Date startDate, Date endDate) {
         return OrderDao.getInstance().getItems().stream()
-                .filter(o -> o.getDate().before(date))
+                .filter(o -> o.getDate().before(startDate) && o.getDate().before(endDate))
                 .filter(o -> o.getUser().getId().equals(userId))
                 .collect(Collectors.toList());
     }
 
     @Override
-    public Object generateBill(Long userId, Date date) {
-        List<Order> orderList = getUserOrdersDueToDate(userId, date);
+    public Object generateBill(Long userId, Date startDate, Date endDate) {
+        List<Order> orderList = getUserOrdersDueToDate(userId, startDate, endDate);
 
         List<String> stringList = new ArrayList<>();
         Bill bill = new Bill();
@@ -87,7 +87,8 @@ public class OrderRepository implements IOrderRepository {
 
         bill.setOrderedPosition(stringList);
         bill.setGeneratedDate(new Date());
-        bill.setOrderDate(date);
+        bill.setStartDate(startDate);
+        bill.setEndDate(endDate);
         bill.setPrice(countAll(orderList));
         if (bill.getPrice().equals(0F)) {
             bill.setAdditionalInformation("Brak zamówień w wybranym terminie.");

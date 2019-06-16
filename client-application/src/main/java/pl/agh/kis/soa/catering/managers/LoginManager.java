@@ -106,4 +106,8 @@ public class LoginManager implements Serializable {
         return "/login.xhtml?faces-redirect=true";
     }
 
+    public static void initDB() {
+//        InitDatabase.getInstance();
+//        InitDatabase initDatabase = new InitDatabase();
+    }
 }

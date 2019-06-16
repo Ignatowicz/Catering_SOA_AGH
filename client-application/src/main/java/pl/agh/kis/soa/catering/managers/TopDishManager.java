@@ -11,8 +11,6 @@ import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 import java.io.Serializable;
 
-import static pl.agh.kis.soa.catering.utils.CommonFunctions.redirectToPage;
-
 
 @Getter
 @Setter
@@ -37,12 +35,12 @@ public class TopDishManager implements Serializable {
     private ISubscriptionRepository subscriptionRepository;
 
 
-    public String setDayDish(Long dishId) {
+    public String setDishDay(Long dishId) {
         dishRepository.setDishDay(dishId);
         return redirectToPage("catering_products");
     }
 
-    public String getDayDish() {
+    public String getDishDay() {
         Dish dish = dishRepository.getDishDay();
 
         if (dish == null)
@@ -52,4 +50,7 @@ public class TopDishManager implements Serializable {
         }
     }
 
+    public static String redirectToPage(String pageName) {
+        return "/" + pageName + ".xhtml?faces-redirect=true";
+    }
 }

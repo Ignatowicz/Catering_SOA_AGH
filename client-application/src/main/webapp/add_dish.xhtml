@@ -32,7 +32,7 @@
             <p:selectOneListbox value="#{ModifyMenuManager.selectedDish}" rendered="#{ModifyMenuManager.modifyDish}">
                 <f:selectItem itemLabel="" itemValue="-1L"/>
                 <c:forEach var="ct" items="#{ModifyMenuManager.dishRepository.allDishes}" >
-                    <f:selectItem itemLabel="#{ct.categoryName}" itemValue="#{ct.id}"/>
+                    <f:selectItem itemLabel="#{ct.name}" itemValue="#{ct.id}"/>
                 </c:forEach>
                 <f:ajax event="change" listener="#{ModifyMenuManager.updateDishModifyInput()}" execute="@this" render="@form"/>
             </p:selectOneListbox>
@@ -40,8 +40,6 @@
             <h:outputText value="Nazwa "/>
             <h:inputText value="#{ModifyMenuManager.dishName}"/>
 
-            <h:outputText value="Opis "/>
-            <h:inputText value="#{ModifyMenuManager.descriptionDish}"/>
 
             <h:outputText value="Cena "/>
             <h:inputText id="price" value="#{ModifyMenuManager.dishPrice}" validatorMessage="Niepoprawna cena!" >
@@ -51,8 +49,8 @@
             <h:outputText value="Kategoria "/>
             <p:selectOneMenu value="#{ModifyMenuManager.categoryNumber}">
                 <f:selectItem itemLabel="" itemValue=""/>
-                <c:forEach var="ct" items="#{MenuManager.dishRepository.allCategory}" >
-                    <f:selectItem itemLabel="#{ct.categoryName}" itemValue="#{ct.id}"/>
+                <c:forEach var="ct" items="#{MenuManager.categoryRepository.allCategories}" >
+                    <f:selectItem itemLabel="#{ct.name}" itemValue="#{ct.id}"/>
                 </c:forEach>
             </p:selectOneMenu>
 

@@ -8,18 +8,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="df6b4aa0-1a96-4129-a4be-3d758c33ef59" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/business-logic-api/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/business-logic-api/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/api/IDishRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/api/IDishRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/api/IOrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/api/IOrderRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/implementation/DishRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/implementation/DishRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/implementation/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/implementation/OrderRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/utils/Bill.java" beforeDir="false" afterPath="$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/utils/Bill.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client-application/src/main/java/pl/agh/kis/soa/catering/managers/LoginManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/client-application/src/main/java/pl/agh/kis/soa/catering/managers/LoginManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-application/src/main/java/pl/agh/kis/soa/catering/managers/MainManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/client-application/src/main/java/pl/agh/kis/soa/catering/managers/MainManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-application/src/main/java/pl/agh/kis/soa/catering/managers/MenuManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/client-application/src/main/java/pl/agh/kis/soa/catering/managers/MenuManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-application/src/main/java/pl/agh/kis/soa/catering/managers/TopDishManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/client-application/src/main/java/pl/agh/kis/soa/catering/managers/TopDishManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-application/src/main/java/pl/agh/kis/soa/catering/managers/UserManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/client-application/src/main/java/pl/agh/kis/soa/catering/managers/UserManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-application/src/main/java/pl/agh/kis/soa/catering/utils/Bill.java" beforeDir="false" afterPath="$PROJECT_DIR$/client-application/src/main/java/pl/agh/kis/soa/catering/utils/Bill.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-application/src/main/java/pl/agh/kis/soa/catering/utils/CommonFunctions.java" beforeDir="false" afterPath="$PROJECT_DIR$/client-application/src/main/java/pl/agh/kis/soa/catering/utils/CommonFunctions.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client-application/src/main/java/pl/agh/kis/soa/catering/utils/InitDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/client-application/src/main/java/pl/agh/kis/soa/catering/utils/InitDatabase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client-application/src/main/webapp/add_category.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/client-application/src/main/webapp/add_category.xhtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client-application/src/main/webapp/add_dish.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/client-application/src/main/webapp/add_dish.xhtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client-application/src/main/webapp/bill.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/client-application/src/main/webapp/bill.xhtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client-application/src/main/webapp/catering_current_order.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/client-application/src/main/webapp/catering_current_order.xhtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client-application/src/main/webapp/catering_products.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/client-application/src/main/webapp/catering_products.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-application/src/main/webapp/login.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/client-application/src/main/webapp/login.xhtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client-application/src/main/webapp/user_panel.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/client-application/src/main/webapp/user_panel.xhtml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -42,49 +48,128 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client-application/src/main/webapp/user_panel.xhtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="358">
+              <caret line="149" column="17" lean-forward="true" selection-start-line="149" selection-start-column="17" selection-end-line="149" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client-application/src/main/java/pl/agh/kis/soa/catering/managers/TopDishManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="322">
+              <caret line="37" column="18" selection-start-line="37" selection-start-column="18" selection-end-line="37" selection-end-column="18" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client-application/src/main/java/pl/agh/kis/soa/catering/managers/MenuManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="493">
+              <caret line="175" column="45" selection-start-line="175" selection-start-column="45" selection-end-line="175" selection-end-column="45" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#4638#4639#0" expanded="true" />
+                <element signature="e#4687#4688#0" expanded="true" />
+                <element signature="e#5449#5450#0" expanded="true" />
+                <element signature="e#5508#5509#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/model/Dish.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="458">
+              <caret line="31" column="20" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/api/IDishRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="418">
+              <caret line="28" column="15" selection-start-line="28" selection-start-column="15" selection-end-line="28" selection-end-column="15" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/implementation/DishRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="269">
+              <caret line="89" column="9" lean-forward="true" selection-start-line="89" selection-start-column="9" selection-end-line="89" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2149#2157#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client-application/src/main/java/pl/agh/kis/soa/catering/managers/ModifyMenuManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1768">
+              <caret line="140" column="1" selection-start-line="140" selection-start-column="1" selection-end-line="140" selection-end-column="1" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/api/IOrderRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="26" column="17" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client-application/src/main/java/pl/agh/kis/soa/catering/managers/UserManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="537">
-              <caret line="102" column="1" selection-start-line="102" selection-start-column="1" selection-end-line="102" selection-end-column="1" />
+            <state relative-caret-position="214">
+              <caret line="76" column="18" selection-start-line="76" selection-start-column="18" selection-end-line="76" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2120#2121#0" expanded="true" />
-                <element signature="e#2172#2173#0" expanded="true" />
-                <element signature="e#2305#2306#0" expanded="true" />
-                <element signature="e#2330#2331#0" expanded="true" />
+                <element signature="e#2173#2174#0" expanded="true" />
+                <element signature="e#2224#2225#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/client-application/src/main/webapp/login.xhtml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client-application/src/main/java/pl/agh/kis/soa/catering/utils/CommonFunctions.java">
+        <entry file="file://$PROJECT_DIR$/client-application/src/main/java/pl/agh/kis/soa/catering/managers/LoginManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="56" selection-start-line="9" selection-start-column="56" selection-end-line="9" selection-end-column="56" />
+            <state relative-caret-position="222">
+              <caret line="67" column="19" selection-start-line="67" selection-start-column="19" selection-end-line="67" selection-end-column="19" />
               <folding>
-                <element signature="e#266#267#0" expanded="true" />
-                <element signature="e#334#335#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#2305#2306#0" expanded="true" />
+                <element signature="e#2374#2375#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client-application/src/main/java/pl/agh/kis/soa/catering/utils/Bill.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="32" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -119,6 +204,13 @@
       <find>Data</find>
       <find>cate</find>
       <find>tDish</find>
+      <find>ps</find>
+      <find>dish.</find>
+      <find>ct.</find>
+      <find>.</find>
+      <find>.getA</find>
+      <find>.toAp</find>
+      <find>Colle</find>
     </findStrings>
     <replaceStrings>
       <replace>&lt;Object</replace>
@@ -128,6 +220,7 @@
       <replace>set</replace>
       <replace>MenuManager</replace>
       <replace>t</replace>
+      <replace>dish</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -156,12 +249,7 @@
         <option value="$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/api/ICategoryRepository.java" />
         <option value="$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/implementation/CategoryRepository.java" />
         <option value="$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/model/User.java" />
-        <option value="$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/api/IDishRepository.java" />
-        <option value="$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/api/IOrderRepository.java" />
-        <option value="$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/utils/Bill.java" />
         <option value="$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/api/ISubscriptionRepository.java" />
-        <option value="$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/implementation/DishRepository.java" />
-        <option value="$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/implementation/OrderRepository.java" />
         <option value="$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/implementation/SubscriptionRepository.java" />
         <option value="$PROJECT_DIR$/client-application/src/main/webapp/WEB-INF/faces-config.xml" />
         <option value="$PROJECT_DIR$/client-application/src/main/webapp/WEB-INF/jboss-web.xml" />
@@ -177,21 +265,26 @@
         <option value="$PROJECT_DIR$/client-application/src/main/java/pl/agh/kis/soa/catering/managers/TopDishManagr.java" />
         <option value="$PROJECT_DIR$/client-application/src/main/java/pl/agh/kis/soa/catering/managers/OrderManager.java" />
         <option value="$PROJECT_DIR$/business-logic-api/src/main/resources/META-INF/persistence.xml" />
-        <option value="$PROJECT_DIR$/client-application/src/main/java/pl/agh/kis/soa/catering/utils/InitDatabase.java" />
-        <option value="$PROJECT_DIR$/client-application/src/main/webapp/add_dish.xhtml" />
-        <option value="$PROJECT_DIR$/client-application/src/main/webapp/bill.xhtml" />
-        <option value="$PROJECT_DIR$/client-application/src/main/webapp/catering_current_order.xhtml" />
-        <option value="$PROJECT_DIR$/client-application/src/main/webapp/catering_products.xhtml" />
-        <option value="$PROJECT_DIR$/client-application/src/main/webapp/user_panel.xhtml" />
-        <option value="$PROJECT_DIR$/client-application/src/main/webapp/add_category.xhtml" />
-        <option value="$PROJECT_DIR$/client-application/src/main/java/pl/agh/kis/soa/catering/managers/LoginManager.java" />
-        <option value="$PROJECT_DIR$/client-application/src/main/java/pl/agh/kis/soa/catering/utils/CommonFunctions.java" />
-        <option value="$PROJECT_DIR$/client-application/src/main/java/pl/agh/kis/soa/catering/managers/MenuManager.java" />
         <option value="$PROJECT_DIR$/client-application/src/main/java/pl/agh/kis/soa/catering/managers/ModifyMenuManager.java" />
+        <option value="$PROJECT_DIR$/client-application/src/main/java/pl/agh/kis/soa/catering/utils/InitDatabase.java" />
+        <option value="$PROJECT_DIR$/client-application/src/main/webapp/login.xhtml" />
+        <option value="$PROJECT_DIR$/client-application/src/main/java/pl/agh/kis/soa/catering/utils/CommonFunctions.java" />
+        <option value="$PROJECT_DIR$/client-application/src/main/java/pl/agh/kis/soa/catering/managers/LoginManager.java" />
         <option value="$PROJECT_DIR$/client-application/src/main/java/pl/agh/kis/soa/catering/managers/TopDishManager.java" />
         <option value="$PROJECT_DIR$/client-application/src/main/java/pl/agh/kis/soa/catering/utils/Bill.java" />
+        <option value="$PROJECT_DIR$/client-application/src/main/webapp/bill.xhtml" />
+        <option value="$PROJECT_DIR$/client-application/src/main/webapp/catering_current_order.xhtml" />
         <option value="$PROJECT_DIR$/client-application/src/main/java/pl/agh/kis/soa/catering/managers/UserManager.java" />
-        <option value="$PROJECT_DIR$/client-application/src/main/webapp/login.xhtml" />
+        <option value="$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/utils/Bill.java" />
+        <option value="$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/implementation/OrderRepository.java" />
+        <option value="$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/api/IOrderRepository.java" />
+        <option value="$PROJECT_DIR$/client-application/src/main/webapp/add_category.xhtml" />
+        <option value="$PROJECT_DIR$/client-application/src/main/webapp/add_dish.xhtml" />
+        <option value="$PROJECT_DIR$/client-application/src/main/webapp/catering_products.xhtml" />
+        <option value="$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/api/IDishRepository.java" />
+        <option value="$PROJECT_DIR$/client-application/src/main/java/pl/agh/kis/soa/catering/managers/MenuManager.java" />
+        <option value="$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/implementation/DishRepository.java" />
+        <option value="$PROJECT_DIR$/client-application/src/main/webapp/user_panel.xhtml" />
       </list>
     </option>
   </component>
@@ -247,7 +340,7 @@
               <item name="business-logic-api" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Catering_SOA_AGH" type="b2602c69:ProjectViewProjectNode" />
@@ -255,8 +348,28 @@
               <item name="business-logic-api" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="META-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="catering" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Catering_SOA_AGH" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Catering_SOA_AGH" type="462c0819:PsiDirectoryNode" />
+              <item name="business-logic-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="catering" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Catering_SOA_AGH" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Catering_SOA_AGH" type="462c0819:PsiDirectoryNode" />
+              <item name="business-logic-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="catering" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Catering_SOA_AGH" type="b2602c69:ProjectViewProjectNode" />
@@ -509,7 +622,7 @@
       <updated>1560591715761</updated>
       <workItem from="1560591720492" duration="19518000" />
       <workItem from="1560617644339" duration="4916000" />
-      <workItem from="1560690182121" duration="5149000" />
+      <workItem from="1560690182121" duration="11045000" />
     </task>
     <task id="LOCAL-00001" summary="database logic">
       <created>1560606354801</created>
@@ -560,11 +673,18 @@
       <option name="project" value="LOCAL" />
       <updated>1560685852838</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="managed beans - basic functionalities">
+      <created>1560695621285</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1560695621285</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35351000" />
+    <option name="totallyTimeSpent" value="41247000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1166" extended-state="6" />
@@ -589,7 +709,7 @@
       <window_info anchor="bottom" id="Message" order="6" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Find" order="8" />
-      <window_info active="true" anchor="bottom" id="Run" order="9" visible="true" weight="0.3262136" />
+      <window_info active="true" anchor="bottom" id="Run" order="9" visible="true" weight="0.35436893" />
       <window_info anchor="bottom" id="Debug" order="10" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
@@ -622,7 +742,8 @@
     <MESSAGE value="ejb implementation completed" />
     <MESSAGE value=".idea" />
     <MESSAGE value="implementation queue beans fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="implementation queue beans fixed" />
+    <MESSAGE value="managed beans - basic functionalities" />
+    <option name="LAST_COMMIT_MESSAGE" value="managed beans - basic functionalities" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/dao/DishDao.java">
@@ -692,36 +813,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/api/IDishRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="31" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/model/Dish.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="20" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/api/ICategoryRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/dao/OrderDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -773,38 +864,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/implementation/OrderRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1395">
-          <caret line="101" column="1" selection-start-line="101" selection-start-column="1" selection-end-line="101" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/implementation/DishRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1365">
-          <caret line="101" column="1" selection-start-line="101" selection-start-column="1" selection-end-line="101" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/implementation/CategoryRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#690#691#0" expanded="true" />
-            <element signature="e#758#759#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/api/IUserRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -844,83 +903,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/business-logic-api/src/main/resources/META-INF/persistence.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="65" selection-start-line="18" selection-start-column="65" selection-end-line="18" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client-application/src/main/webapp/add_dish.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="915">
-          <caret line="69" column="59" selection-start-line="69" selection-start-column="59" selection-end-line="69" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client-application/src/main/webapp/bill.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="41" column="59" selection-start-line="41" selection-start-column="59" selection-end-line="41" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client-application/src/main/webapp/catering_current_order.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1168">
-          <caret line="92" column="60" selection-start-line="92" selection-start-column="60" selection-end-line="92" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client-application/src/main/webapp/catering_products.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1365">
-          <caret line="95" column="72" selection-start-line="95" selection-start-column="72" selection-end-line="95" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client-application/src/main/webapp/index.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client-application/src/main/webapp/registration.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="795">
-          <caret line="53" selection-start-line="53" selection-end-line="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client-application/src/main/webapp/user_panel.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="898">
-          <caret line="190" column="59" selection-start-line="190" selection-start-column="59" selection-end-line="190" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client-application/src/main/webapp/add_category.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="33" column="60" selection-start-line="33" selection-start-column="60" selection-end-line="33" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/model/Subscription.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="23" column="19" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/model/Order.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="36" column="23" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -937,14 +923,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client-application/src/main/java/pl/agh/kis/soa/catering/utils/InitDatabase.java">
+    <entry file="file://$PROJECT_DIR$/business-logic-api/src/main/resources/META-INF/persistence.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="60" selection-start-line="60" selection-end-line="60" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1646#1647#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="270">
+          <caret line="18" column="65" selection-start-line="18" selection-start-column="65" selection-end-line="18" selection-end-column="65" />
         </state>
       </provider>
     </entry>
@@ -958,33 +940,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client-application/src/main/java/pl/agh/kis/soa/catering/managers/LoginManager.java">
+    <entry file="file://$PROJECT_DIR$/client-application/src/main/java/pl/agh/kis/soa/catering/utils/InitDatabase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1317">
-          <caret line="106" column="5" lean-forward="true" selection-start-line="106" selection-start-column="5" selection-end-line="106" selection-end-column="5" />
+        <state relative-caret-position="-4">
+          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client-application/src/main/java/pl/agh/kis/soa/catering/managers/TopDishManager.java">
+    <entry file="file://$PROJECT_DIR$/client-application/src/main/java/pl/agh/kis/soa/catering/utils/CommonFunctions.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="45" column="20" selection-start-line="45" selection-start-column="20" selection-end-line="45" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client-application/src/main/java/pl/agh/kis/soa/catering/managers/MenuManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="873">
-          <caret line="176" column="1" selection-start-line="176" selection-start-column="1" selection-end-line="176" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="60">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
@@ -998,10 +967,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client-application/src/main/java/pl/agh/kis/soa/catering/managers/ModifyMenuManager.java">
+    <entry file="file://$PROJECT_DIR$/client-application/src/main/webapp/login.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="885">
-          <caret line="140" column="1" selection-start-line="140" selection-start-column="1" selection-end-line="140" selection-end-column="1" />
+        <state relative-caret-position="465">
+          <caret line="31" column="141" lean-forward="true" selection-start-line="31" selection-start-column="141" selection-end-line="31" selection-end-column="141" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client-application/src/main/java/pl/agh/kis/soa/catering/utils/Bill.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1010,33 +986,121 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/utils/Bill.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="20" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client-application/src/main/java/pl/agh/kis/soa/catering/utils/Bill.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="32" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client-application/src/main/java/pl/agh/kis/soa/catering/utils/CommonFunctions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="56" selection-start-line="9" selection-start-column="56" selection-end-line="9" selection-end-column="56" />
+        <state relative-caret-position="210">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
           <folding>
-            <element signature="e#266#267#0" expanded="true" />
-            <element signature="e#334#335#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/implementation/OrderRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="453">
+          <caret line="74" lean-forward="true" selection-start-line="74" selection-end-line="74" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/api/ICategoryRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="36" lean-forward="true" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/implementation/CategoryRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="517">
+          <caret line="41" column="13" lean-forward="true" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#690#691#0" expanded="true" />
+            <element signature="e#758#759#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client-application/src/main/webapp/add_category.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="453">
+          <caret line="32" column="94" selection-start-line="32" selection-start-column="94" selection-end-line="32" selection-end-column="94" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client-application/src/main/webapp/add_dish.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="543">
+          <caret line="52" column="67" selection-start-line="52" selection-start-column="67" selection-end-line="52" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client-application/src/main/webapp/catering_current_order.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-237">
+          <caret line="30" column="27" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client-application/src/main/webapp/catering_products.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-102">
+          <caret line="36" column="54" selection-start-line="36" selection-start-column="54" selection-end-line="36" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client-application/src/main/webapp/index.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client-application/src/main/webapp/registration.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="33" lean-forward="true" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client-application/src/main/webapp/bill.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="37" column="18" lean-forward="true" selection-start-line="37" selection-start-column="18" selection-end-line="37" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/model/Order.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="487">
+          <caret line="36" column="23" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client-application/src/main/java/pl/agh/kis/soa/catering/managers/LoginManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="67" column="19" selection-start-line="67" selection-start-column="19" selection-end-line="67" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2305#2306#0" expanded="true" />
+            <element signature="e#2374#2375#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/api/IOrderRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="11" selection-start-line="30" selection-start-column="11" selection-end-line="30" selection-end-column="11" />
+        <state relative-caret-position="390">
+          <caret line="26" column="17" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1045,22 +1109,85 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client-application/src/main/java/pl/agh/kis/soa/catering/managers/UserManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="537">
-          <caret line="102" column="1" selection-start-line="102" selection-start-column="1" selection-end-line="102" selection-end-column="1" />
+        <state relative-caret-position="214">
+          <caret line="76" column="18" selection-start-line="76" selection-start-column="18" selection-end-line="76" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2120#2121#0" expanded="true" />
-            <element signature="e#2172#2173#0" expanded="true" />
-            <element signature="e#2305#2306#0" expanded="true" />
-            <element signature="e#2330#2331#0" expanded="true" />
+            <element signature="e#2173#2174#0" expanded="true" />
+            <element signature="e#2224#2225#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client-application/src/main/webapp/login.xhtml">
+    <entry file="file://$PROJECT_DIR$/client-application/src/main/java/pl/agh/kis/soa/catering/managers/ModifyMenuManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+        <state relative-caret-position="1768">
+          <caret line="140" column="1" selection-start-line="140" selection-start-column="1" selection-end-line="140" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/model/Dish.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="458">
+          <caret line="31" column="20" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client-application/src/main/java/pl/agh/kis/soa/catering/managers/TopDishManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="37" column="18" selection-start-line="37" selection-start-column="18" selection-end-line="37" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client-application/src/main/java/pl/agh/kis/soa/catering/managers/MenuManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="175" column="45" selection-start-line="175" selection-start-column="45" selection-end-line="175" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4638#4639#0" expanded="true" />
+            <element signature="e#4687#4688#0" expanded="true" />
+            <element signature="e#5449#5450#0" expanded="true" />
+            <element signature="e#5508#5509#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/api/IDishRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="28" column="15" selection-start-line="28" selection-start-column="15" selection-end-line="28" selection-end-column="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/implementation/DishRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="89" column="9" lean-forward="true" selection-start-line="89" selection-start-column="9" selection-end-line="89" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2149#2157#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client-application/src/main/webapp/user_panel.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="358">
+          <caret line="149" column="17" lean-forward="true" selection-start-line="149" selection-start-column="17" selection-end-line="149" selection-end-column="17" />
         </state>
       </provider>
     </entry>
