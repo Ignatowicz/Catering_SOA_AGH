@@ -57,7 +57,7 @@
 
     <br/>
 
-    <h:form id="form-customer" rendered="#{LoginManager.checkCustomer()}">
+    <h:form id="form-customer-order" rendered="#{LoginManager.checkCustomer()}">
       <h3>Zamówienia</h3>
 
         <h4>Jednorazowe</h4>
@@ -86,9 +86,24 @@
     </h:form>
 
 
+    <h:form id="form-customer-subscription" rendered="#{LoginManager.checkCustomer()}">
+        <h:dataTable id="subscription" value="#{UserManager.subscriptionRepository.getUserSubscriptions(LoginManager.loggedUser.id)}" var="var" cellpadding="8px">
+            <h4>Cykliczne</h4>
+
+            <h:column>
+                <f:facet name="header">Subskrybowane potrawy</f:facet>
+                #{var.dishesToString()}
+            </h:column>
+
+            <h:column>
+                <f:facet name="header"> </f:facet>
+                <p:commandButton value="Anuluj" action="#{MenuManager.cancelSubscription(var.id)}"/>
+            </h:column>
+        </h:dataTable>
+    </h:form>
+
 
     <h:form id="form1" rendered="#{LoginManager.checkEmployee()}">
-        <h4>Cykliczne</h4>
 
         <h:panelGrid columns="2">
 
@@ -187,7 +202,7 @@
 
                 <h:column>
                     <f:facet name="header">Ustaw daniem dnia </f:facet>
-                    <h:commandButton value="Ustaw" action="#{TopDishManager.setDishDay(var.id)}"/>
+                    <h:commandButton value="Ustaw" action="#{MenuManager.setDishDay(var.id)}"/>
                 </h:column>
             </h:dataTable>
 

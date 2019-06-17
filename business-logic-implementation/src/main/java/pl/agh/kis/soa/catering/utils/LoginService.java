@@ -24,8 +24,4 @@ public class LoginService {
                 .anyMatch(elem -> elem.getPassword().equals(password) || elem.getLogin().equals(login));
     }
 
-    public static Boolean checkIfExistPassword(String password) {
-        return UserDao.getInstance().getItems().stream().anyMatch(elem -> elem.getPassword().equals(password));
-
-    }
 }

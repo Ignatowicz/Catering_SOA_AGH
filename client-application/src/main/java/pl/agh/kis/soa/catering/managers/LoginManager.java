@@ -4,7 +4,6 @@ import lombok.Getter;
 import lombok.Setter;
 import pl.agh.kis.soa.catering.api.*;
 import pl.agh.kis.soa.catering.model.User;
-import pl.agh.kis.soa.catering.utils.InitDatabase;
 import pl.agh.kis.soa.catering.utils.UserRole;
 
 import javax.annotation.ManagedBean;
@@ -119,9 +118,4 @@ public class LoginManager implements Serializable {
         return loggedUser.getRole().equals(UserRole.CUSTOMER);
     }
 
-
-    public static void initDB() {
-//        InitDatabase.getInstance();
-//        InitDatabase initDatabase = new InitDatabase();
-    }
 }

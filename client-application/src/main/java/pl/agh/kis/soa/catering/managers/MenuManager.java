@@ -55,6 +55,9 @@ public class MenuManager implements Serializable {
     private int deliverHour;
     private int deliverMinute;
 
+    private Date startDeliver;
+    private Date endDeliver;
+
     private final OrderStatus ORDERED = OrderStatus.ORDERED;
     private final OrderStatus READY = OrderStatus.READY;
     private final OrderStatus SUPPLIED = OrderStatus.SUPPLIED;
@@ -125,32 +128,51 @@ public class MenuManager implements Serializable {
     }
 
     public String makeCyclicOrder(Long userId) {
-        // TODO
-        Set<Subscription> subscriptions = new HashSet<>();
-//        for (Date d : cyclicOrderDeliver) {
-//            subscriptions.add(new Subscription());
-//        }
-        Subscription subscription = new Subscription();
-        subscription.setUser(userRepository.getUser(userId));
-        subscription.setDishes(dishesOrder);
-        subscription.setFrequency("week");
-        subscriptionRepository.addSubscription(subscription);
+        System.out.println(orderDeliver.toString());
+        Date orderDate = new Date();
+        orderDate.setHours(deliverHour);
+        orderDate.setMinutes(deliverMinute);
+
+        if ((endDeliver.getDay() - startDeliver.getDay()) < 0)
+            return redirectToPage("catering_wall");
+
+        for (int i = endDeliver.getDay(); i < startDeliver.getDay(); i++) {
+            Calendar c = Calendar.getInstance();
+            c.setTime(orderDate);
+            c.add(Calendar.DAY_OF_MONTH, i);
+            orderDate= c.getTime();
+
+            Subscription subscription = new Subscription();
+            subscription.setUser(userRepository.getUser(userId));
+            subscription.setDishes(dishesOrder);
+            subscription.setFrequency("day");
+            subscriptionRepository.addSubscription(subscription);
+
+            orderDeliver = orderDate;
+            completeOrder(userId);
+        }
+
         clearAll();
         return redirectToPage("catering_wall");
     }
 
     public String makeNormalOrder(Long userId) {
-        Order order = new Order();
         orderDeliver.setHours(deliverHour);
         orderDeliver.setMinutes(deliverMinute);
+
+        completeOrder(userId);
+        clearAll();
+        return redirectToPage("catering_wall");
+    }
+
+    private void completeOrder(Long userId) {
+        Order order = new Order();
         order.setUser(userRepository.getUser(userId));
         order.setStatus(OrderStatus.ORDERED);
         order.setDishes(dishesOrder);
         order.setDate(orderDeliver);
         order.setPrice(sumOrderPrice());
         orderRepository.addOrder(order);
-        clearAll();
-        return redirectToPage("catering_wall");
     }
 
     public void approvedDish(Long dishId) {
@@ -191,6 +213,11 @@ public class MenuManager implements Serializable {
         return redirectToPage("user_panel");
     }
 
+    public String cancelSubscription(Long subscriptionId) {
+        subscriptionRepository.deleteSubscription(subscriptionId);
+        return redirectToPage("user_panel");
+    }
+
     public void prepare() {
         Order order = orderRepository.getOrder(idSelectedOrder);
         order.setStatus(READY);
@@ -207,6 +234,20 @@ public class MenuManager implements Serializable {
         Order order = orderRepository.getOrder(idSelectedOrder);
         order.setStatus(PAID);
         orderRepository.updateOrder(order);
+    }
+
+    public String setDishDay(Long dishId) {
+        dishRepository.setDishDay(dishId);
+        return redirectToPage("catering_wall");
+    }
+
+    public String getDishDay() {
+        Dish dish = dishRepository.getDishDay();
+        if (dish == null)
+            return "Pozycja dnia nie została jeszcze wybrana!";
+        else {
+            return dish.getName() + " za " + dish.getPrice() + "zł";
+        }
     }
 
 }
