@@ -6,6 +6,7 @@ import pl.agh.kis.soa.catering.api.ICategoryRepository;
 
 import javax.ejb.EJB;
 import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;
 import java.util.List;
 
 @Path("category")
@@ -15,16 +16,16 @@ public class CategoryService {
     ICategoryRepository categoryRepository;
 
     @GET
-    @Produces({ "text/xml", "application/xml", "application/json" })
+    @Produces({"application/xml", "application/json"})
     public List<pl.agh.kis.soa.catering.model.Category> getAllCategories(@HeaderParam("Accept-Language") String language) {
         if ("en".equals(language)) {
-            return getAllMenuCategoriesEN();
+            return getAllCategoriesEN();
         }
         return getAllCategoriesPL();
     }
 
     @GET
-    @Produces({ "text/xml", "application/xml", "application/json" })
+    @Produces({"application/xml", "application/json"})
     @Path("{menuCategoryId}")
     public pl.agh.kis.soa.catering.model.Category getCategoryById(@PathParam("menuCategoryId")Long menuCategoryId) {
         return categoryRepository.getCategory(menuCategoryId);
@@ -36,11 +37,11 @@ public class CategoryService {
     }
 
     @SuppressWarnings("unchecked")
-    private List<pl.agh.kis.soa.catering.model.Category> getAllMenuCategoriesEN() {
+    private List<pl.agh.kis.soa.catering.model.Category> getAllCategoriesEN() {
         List<pl.agh.kis.soa.catering.model.Category> categories = (List<pl.agh.kis.soa.catering.model.Category>)(Object)categoryRepository.getAllCategories();
 
         for(pl.agh.kis.soa.catering.model.Category category : categories)
-            category.setName(category.getName().toUpperCase());
+            category.setName(category.getName() + "PL");
 
         return categories;
     }

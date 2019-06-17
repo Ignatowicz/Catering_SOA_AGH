@@ -58,5 +58,11 @@
             <version>8.0.1-b5</version>
             <scope>compile</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.jboss.resteasy</groupId>
+            <artifactId>resteasy-jaxb-provider</artifactId>
+            <version>3.0.16.Final</version>
+        </dependency>
     </dependencies>
 </project>

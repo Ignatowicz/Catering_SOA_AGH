@@ -16,12 +16,11 @@ public class RestClient {
         Long menuCategoryId;
 
         while(option != 0) {
-            System.out.println("\nMENU");
-            System.out.println("Select 1 to get all menu categories with items as json");
-            System.out.println("Select 2 to get all menu categories with items as xml");
-            System.out.println("Select 3 to get menu category with items as json");
-            System.out.println("Select 4 to get menu category with items as xml");
-            System.out.println("Select 0 to exit");
+            System.out.println("1: wszystkie kategorie jako json");
+            System.out.println("2: wszystkie kategorie jako xml");
+            System.out.println("3: wybrana kategoria jako json");
+            System.out.println("4: wybrana kategoria jako xml");
+            System.out.print("0: wyjście z programu \n>> ");
 
             option = reader.nextInt();
             switch(option) {
@@ -32,12 +31,12 @@ public class RestClient {
                     getAllMenuCategoriesAsXml();
                     break;
                 case 3:
-                    System.out.print("Write category id which would you like to display: ");
+                    System.out.print("Proszę podać ID kategorii: ");
                     menuCategoryId = reader.nextLong();
                     getMenuCategoryByIdAsJson(menuCategoryId);
                     break;
                 case 4:
-                    System.out.print("Write category id which would you like to display: ");
+                    System.out.print("Proszę podać ID kategorii: ");
                     menuCategoryId = reader.nextLong();
                     getMenuCategoryByIdAsXml(menuCategoryId);
                     break;
@@ -48,46 +47,36 @@ public class RestClient {
     private static void getAllMenuCategoriesAsJson() {
         ResteasyClient client = new ResteasyClientBuilder().build();
         ResteasyWebTarget target = client.target("http://localhost:8080/rest/api/category");
-//        target.register(new BasicAuthentication("admin", "admin"));
         Response response = target.request().accept(MediaType.APPLICATION_JSON).get();
-        System.out.println("\nGet all menu categories json status: " + response.getStatus());
-        System.out.println("Response:");
         printResponse(response);
     }
 
     private static void getAllMenuCategoriesAsXml() {
         ResteasyClient client = new ResteasyClientBuilder().build();
         ResteasyWebTarget target = client.target("http://localhost:8080/rest/api/category");
-//        target.register(new BasicAuthentication("admin", "admin"));
-        Response response = target.request().accept(MediaType.TEXT_XML).get();
-        System.out.println("\nGet all menu categories as xml status: " + response.getStatus());
-        System.out.println("Response:");
+        Response response = target.request().accept(MediaType.APPLICATION_XML).get();
         printResponse(response);
     }
 
     private static void getMenuCategoryByIdAsJson(Long categoryId) {
         ResteasyClient client = new ResteasyClientBuilder().build();
         ResteasyWebTarget target = client.target("http://localhost:8080/rest/api/category/" + categoryId);
-//        target.register(new BasicAuthentication("admin", "admin"));
         Response response = target.request().accept(MediaType.APPLICATION_JSON).get();
-        System.out.println("\nGet menu category with id: " + categoryId + " as json status: " + response.getStatus());
-        System.out.println("Response:");
         printResponse(response);
     }
 
     private static void getMenuCategoryByIdAsXml(Long categoryId) {
         ResteasyClient client = new ResteasyClientBuilder().build();
         ResteasyWebTarget target = client.target("http://localhost:8080/rest/api/category/" + categoryId);
-//        target.register(new BasicAuthentication("admin", "admin"));
-        Response response = target.request().accept(MediaType.TEXT_XML).get();
-        System.out.println("\nGet menu category with id: " + categoryId + " as xml status: " + response.getStatus());
-        System.out.println("Response:");
+        Response response = target.request().accept(MediaType.APPLICATION_XML).get();
         printResponse(response);
     }
 
     private static void printResponse(Response response) {
+        System.out.println("\nStatus: " + response.getStatus());
+        System.out.println("Odpowiedź:");
         String value = response.readEntity(String.class);
-        System.out.println(value);
+        System.out.println(value + "\n");
         response.close();
     }
 }

@@ -5,11 +5,15 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @Entity
+@XmlRootElement
+@XmlTransient
 @Table(name = "Dishes")
 @Access(AccessType.FIELD)
 public class Dish extends AbstractModel {
