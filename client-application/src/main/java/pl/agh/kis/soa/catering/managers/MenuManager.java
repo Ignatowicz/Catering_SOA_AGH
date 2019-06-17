@@ -8,7 +8,6 @@ import pl.agh.kis.soa.catering.model.Dish;
 import pl.agh.kis.soa.catering.model.Order;
 import pl.agh.kis.soa.catering.model.Subscription;
 import pl.agh.kis.soa.catering.utils.OrderStatus;
-import pl.agh.kis.soa.catering.utils.UserRole;
 
 import javax.annotation.ManagedBean;
 import javax.ejb.EJB;
@@ -43,24 +42,23 @@ public class MenuManager implements Serializable {
 
     private Long idSelectedCategory;
     private Long idSelectedDish;
+    private Long idSelectedOrder;
+    private Long idSelectedUser;
 
     private List<Dish> dishesOrder;
 
     private boolean cyclicOrder;
-//    private String orderDetails;
     private Date orderDeliver;
     private List<Date> cyclicOrderDeliver;
     private Set<Dish> selectedDishesView;
+    private Set<Order> selectedOrderView;
     private int deliverHour;
     private int deliverMinute;
 
     private final OrderStatus ORDERED = OrderStatus.ORDERED;
-
-//    private final UserRole ADMIN = UserRole.ADMIN;
-//    private final UserRole MANAGER = UserRole.MANAGER;
-//    private final UserRole EMPLOYEE = UserRole.EMPLOYEE;
-//    private final UserRole SUPPLIER = UserRole.SUPPLIER;
-//    private final UserRole CUSTOMER = UserRole.CUSTOMER;
+    private final OrderStatus READY = OrderStatus.READY;
+    private final OrderStatus SUPPLIED = OrderStatus.SUPPLIED;
+    private final OrderStatus PAID = OrderStatus.PAID;
 
     public MenuManager() {
         dishesOrder = new ArrayList<Dish>();
@@ -161,7 +159,6 @@ public class MenuManager implements Serializable {
 
     public void clearAll() {
         orderDeliver = null;
-//        orderDetails = null;
         cyclicOrder = false;
         cyclicOrderDeliver.clear();
         selectedDishesView.clear();
@@ -170,14 +167,13 @@ public class MenuManager implements Serializable {
         deliverMinute = 0;
     }
 
-    public String getChosenDishes(Set<Object> objectSet) {
-        if (objectSet != null && objectSet.size() > 0) {
-            StringBuilder dishes = new StringBuilder();
-            for (Object o : objectSet) {
-                Dish dish = (Dish) o;
-                dishes.append("* ").append(dish.getName()).append("\n");
+    public String getChosenDishes(Set<Dish> dishes) {
+        if (dishes != null && dishes.size() > 0) {
+            StringBuilder dishesToStr = new StringBuilder();
+            for (Dish dish : dishes) {
+                dishesToStr.append("* ").append(dish.getName());
             }
-            return dishes.toString();
+            return dishesToStr.toString();
         } else
             return " Brak pozycji";
     }
@@ -190,8 +186,27 @@ public class MenuManager implements Serializable {
         return "/" + pageName + ".xhtml?faces-redirect=true";
     }
 
-    public void cancelOrder(Long orderId) {
+    public String cancelOrder(Long orderId) {
         orderRepository.deleteOrder(orderId);
+        return redirectToPage("user_panel");
+    }
+
+    public void prepare() {
+        Order order = orderRepository.getOrder(idSelectedOrder);
+        order.setStatus(READY);
+        orderRepository.updateOrder(order);
+    }
+
+    public void deliver() {
+        Order order = orderRepository.getOrder(idSelectedOrder);
+        order.setStatus(SUPPLIED);
+        orderRepository.updateOrder(order);
+    }
+
+    public void setPaid() {
+        Order order = orderRepository.getOrder(idSelectedOrder);
+        order.setStatus(PAID);
+        orderRepository.updateOrder(order);
     }
 
 }

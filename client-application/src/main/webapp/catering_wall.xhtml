@@ -23,9 +23,11 @@
     <h:outputLabel value="#{TopDishManager.getDishDay()}"/>
     <br/>
 
-    <h2>Dania w ofercie</h2>
 
-    <h:form id="form">
+
+    <h:form id="form" rendered="#{LoginManager.checkCustomer()}">
+
+        <h2>Dania w ofercie</h2>
 
         <h:panelGrid columns="2">
 
@@ -81,11 +83,10 @@
 
     </h:form>
 
+
     <br/>
 
-
-
-    <h:form rendered="#{LoginManager.checkEmployee()}">
+    <h:form rendered="#{LoginManager.checkManager()}">
         <h:commandButton value="Modyfikuj kategorię" action="#{MenuManager.redirectToPage('add_category')}"/>
         <h:commandButton value="Modyfikuj pozycję" action="#{MenuManager.redirectToPage('add_dish')}"/>
     </h:form>

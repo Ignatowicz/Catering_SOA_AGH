@@ -40,7 +40,7 @@ public class UserManager implements Serializable {
 
     private String passwordChanged;
     private Long changePasswordUser;
-    private String changeSelectedPassword;
+    private String changeSelectedUserPassword;
 
     private Date billStartDate;
     private Date billEndDate;
@@ -62,8 +62,8 @@ public class UserManager implements Serializable {
     }
 
     public String changePasswordByAdmin() {
-        if (passwordChanged != null && changePasswordUser != -1L) {
-            userRepository.changePasswordByAdmin(passwordChanged, changePasswordUser);
+        if (changeSelectedUserPassword != null && changePasswordUser != -1L) {
+            userRepository.changePasswordByAdmin(changeSelectedUserPassword, changePasswordUser);
             return null;
         } else {
             return null;
