@@ -1,5 +1,6 @@
 package pl.agh.kis.soa.catering;
 
+import org.jboss.resteasy.client.jaxrs.BasicAuthentication;
 import org.jboss.resteasy.client.jaxrs.ResteasyClient;
 import org.jboss.resteasy.client.jaxrs.ResteasyClientBuilder;
 import org.jboss.resteasy.client.jaxrs.ResteasyWebTarget;
@@ -52,7 +53,9 @@ public class RestClient {
     private static void getCategory(Long categoryId, String language, String mediaType) {
         ResteasyClient client = new ResteasyClientBuilder().build();
         ResteasyWebTarget target = client.target("http://localhost:8080/rest/api/category/" + categoryId);
-        Response response = target.request()
+        Response response = target
+                .register(new BasicAuthentication("manager", "manager"))
+                .request()
                 .accept(mediaType)
                 .header("Accept-Language", language)
                 .get();
@@ -62,7 +65,9 @@ public class RestClient {
     private static void getCategories(String language, String mediaType) {
         ResteasyClient client = new ResteasyClientBuilder().build();
         ResteasyWebTarget target = client.target("http://localhost:8080/rest/api/category");
-        Response response = target.request()
+        Response response = target
+                .register(new BasicAuthentication("manager", "manager"))
+                .request()
                 .accept(mediaType)
                 .header("Accept-Language", language)
                 .get();
