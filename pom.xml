@@ -14,7 +14,6 @@
         <module>business-logic-rest</module>
         <module>client-rest</module>
         <module>client-soap</module>
-        <module>dish-supplier</module>
         <module>business-logic-soap</module>
     </modules>
 

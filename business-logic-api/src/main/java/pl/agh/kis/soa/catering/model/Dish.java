@@ -30,7 +30,7 @@ public class Dish extends AbstractModel {
     @Column(name = "accepted")
     private Boolean accepted;
 
-    @Column(name = "day_dish")
+    @Column(name = "dish_day")
     private Boolean dishDay;
 
     @ManyToOne(targetEntity = Category.class)

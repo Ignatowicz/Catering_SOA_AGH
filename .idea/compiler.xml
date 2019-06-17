@@ -7,14 +7,16 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="client-rest" />
-        <module name="business-logic-soap" />
         <module name="business-logic-rest" />
         <module name="client-application" />
-        <module name="dish-supplier" />
         <module name="client-soap" />
-        <module name="business-logic-implementation" />
+        <module name="business-logic-soap" />
         <module name="business-logic-api" />
+        <module name="business-logic-implementation" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="dish-supplier" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
