@@ -11,48 +11,46 @@
 <h:head>
     <title>Catering</title>
     <f:metadata>
-        <f:viewAction action="#{LoginManager.checkAuthorization(true,'EMPLOYEE')}" />
+        <f:viewAction action="#{LoginManager.checkAuthorization(true,'MANAGER')}" />
     </f:metadata>
 </h:head>
 
 <h:body>
 
-    <h2>Dodawania / modyfikacja dań</h2>
+    <h2>Dodaj, zmodyfikuj, usuń</h2>
 
     <h:form>
 
         <h:panelGrid columns="2">
 
             <h:outputText value="Modyfikuj "/>
-            <p:selectBooleanCheckbox value="#{ModifyMenuManager.modifyDish}">
+            <h:selectBooleanCheckbox value="#{ModifyMenuManager.modifyDish}">
                 <f:ajax event="click" execute="@this" render="@form"/>
-            </p:selectBooleanCheckbox>
+            </h:selectBooleanCheckbox>
 
-            <h:outputText value="Pozycje " rendered="#{ModifyMenuManager.modifyDish}"/>
+            <h:outputText value="Dania" rendered="#{ModifyMenuManager.modifyDish}"/>
             <p:selectOneListbox value="#{ModifyMenuManager.selectedDish}" rendered="#{ModifyMenuManager.modifyDish}">
                 <f:selectItem itemLabel="" itemValue="-1L"/>
-                <c:forEach var="ct" items="#{ModifyMenuManager.dishManager.allDishes}" >
-                    <f:selectItem itemLabel="#{ct.categoryName}" itemValue="#{ct.id}"/>
+                <c:forEach var="ct" items="#{ModifyMenuManager.dishRepository.allDishes}" >
+                    <f:selectItem itemLabel="#{ct.name}" itemValue="#{ct.id}"/>
                 </c:forEach>
                 <f:ajax event="change" listener="#{ModifyMenuManager.updateDishModifyInput()}" execute="@this" render="@form"/>
             </p:selectOneListbox>
 
             <h:outputText value="Nazwa "/>
-            <h:inputText value="#{ModifyMenuManager.nameDish}"/>
+            <h:inputText value="#{ModifyMenuManager.dishName}"/>
 
-            <h:outputText value="Opis "/>
-            <h:inputText value="#{ModifyMenuManager.descriptionDish}"/>
 
             <h:outputText value="Cena "/>
-            <h:inputText id="price" value="#{ModifyMenuManager.priceDish}" validatorMessage="Niepoprawna cena!" >
+            <h:inputText id="price" value="#{ModifyMenuManager.dishPrice}" validatorMessage="Niepoprawna cena!" >
                 <f:validateRegex pattern="[0-9]+(\.[0-9][0-9]?)?" />
             </h:inputText>
 
             <h:outputText value="Kategoria "/>
             <p:selectOneMenu value="#{ModifyMenuManager.categoryNumber}">
                 <f:selectItem itemLabel="" itemValue=""/>
-                <c:forEach var="ct" items="#{DishManager.dishManager.allCategory}" >
-                    <f:selectItem itemLabel="#{ct.categoryName}" itemValue="#{ct.id}"/>
+                <c:forEach var="ct" items="#{MenuManager.categoryRepository.allCategories}" >
+                    <f:selectItem itemLabel="#{ct.name}" itemValue="#{ct.id}"/>
                 </c:forEach>
             </p:selectOneMenu>
 
@@ -67,7 +65,7 @@
 
     <br/>
     <h:form>
-        <p:commandButton value="Wróć" action="#{DishManager.redirectToPage('catering_products')}"/>
+        <p:commandButton value="Wróć" action="#{MenuManager.redirectToPage('catering_wall')}"/>
         <p:commandButton value="Wyloguj" action="#{LoginManager.logout()}"/>
     </h:form>
 

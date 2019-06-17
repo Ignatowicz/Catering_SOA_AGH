@@ -33,7 +33,7 @@
     </h:form>
 
     <br/>
-    <h:form rendered="#{LoginManager.checkRoleAuthority('ADMIN')}">
+    <h:form rendered="#{LoginManager.checkAdmin()}">
 
         <h:panelGrid columns="2">
 
@@ -41,12 +41,12 @@
             <h:selectOneListbox value="#{UserManager.changePasswordUser}">
                 <f:selectItem itemLabel="" itemValue="-1L"/>
                 <c:forEach var="us" items="#{UserManager.getUsersByAdmin()}">
-                    <f:selectItem itemLabel="#{us.userLogin}" itemValue="#{us.id}"/>
+                    <f:selectItem itemLabel="#{us.login}" itemValue="#{us.id}"/>
                 </c:forEach>
             </h:selectOneListbox>
 
             <h:outputText value="Nowe hasło"/>
-            <h:inputSecret value="#{UserManager.changeSelectedPassword}"/>
+            <h:inputSecret value="#{UserManager.changeSelectedUserPassword}"/>
 
         </h:panelGrid>
 
@@ -56,82 +56,96 @@
 
 
     <br/>
-    <h3>Zamówienia</h3>
 
-    <h4>Jednorazowe</h4>
-        <h:dataTable id="order" value="#{UserManager.orderManager.getOrdersForUser(LoginManager.loggedUser.id)}" var="var" border="1" cellpadding="6px">
-            <h:column>
-                <f:facet name="header">Data zamówienia</f:facet>
-                #{var.orderDate}
-            </h:column>
+    <h:form id="form-customer" rendered="#{LoginManager.checkCustomer()}">
+      <h3>Zamówienia</h3>
 
-            <h:column>
-                <f:facet name="header">Data realizacji</f:facet>
-                #{var.orderDeliverDate}
-            </h:column>
+        <h4>Jednorazowe</h4>
+            <h:dataTable id="order" value="#{UserManager.orderRepository.getUserOrders(LoginManager.loggedUser.id)}" var="var" cellpadding="8px">
+                <h:column>
+                    <f:facet name="header">Data realizacji</f:facet>
+                    #{var.date}
+                </h:column>
 
-            <h:column>
-                <f:facet name="header">Cena</f:facet>
-                #{var.orderPrice}
-            </h:column>
+                <h:column>
+                    <f:facet name="header">Cena</f:facet>
+                    #{var.price}
+                </h:column>
 
-            <h:column>
-                <f:facet name="header">Dodatkowe informacje</f:facet>
-                #{var.orderAdditionalInformation}
-            </h:column>
+                <h:column>
+                    <f:facet name="header">Status</f:facet>
+                    #{var.status}
+                </h:column>
 
-            <h:column>
-                <f:facet name="header">Wybrane pozycje</f:facet>
-                #{DishManager.getDishFromSet(var.orderedDishes)}
-            </h:column>
 
-        </h:dataTable>
+                <h:column>
+                    <f:facet name="header"> </f:facet>
+                    <p:commandButton value="Anuluj" action="#{MenuManager.cancelOrder(var.id)}" rendered="#{var.status eq MenuManager.ORDERED}"/>
+                </h:column>
+            </h:dataTable>
+    </h:form>
 
 
 
-    <h4>Cykliczne</h4>
-        <h:dataTable id="subscription" value="#{UserManager.subscriptionManager.getSubscriptionsForUser(LoginManager.loggedUser.id)}" var="var" border="1" cellpadding="6px">
+    <h:form id="form1" rendered="#{LoginManager.checkEmployee()}">
+        <h4>Cykliczne</h4>
 
-            <!--        <h:column>-->
-            <!--            <f:facet name="header">Zamawiąjący</f:facet>-->
-            <!--            #{var.user.userName} #{var.user.userSurname}-->
-            <!--        </h:column>-->
+        <h:panelGrid columns="2">
 
-            <!--        <h:column>-->
-            <!--            <f:facet name="header">Data złożenia</f:facet>-->
-            <!--            #{var.orderDate}-->
-            <!--        </h:column>-->
+            <h:outputText value="Wybierz zamówienie"/>
+            <h:selectOneListbox value="#{MenuManager.idSelectedOrder}">
+                <f:selectItem itemLabel="" itemValue="#{null}"/>
+                <c:forEach var="order" items="#{MenuManager.orderRepository.getAllOrdersByStatus(MenuManager.ORDERED)}" >
+                    <f:selectItem itemLabel="#{order.dishesToString()}" itemValue="#{order.id}"/>
+                </c:forEach>
+                <f:ajax event="change" execute="@this" render="@form"/>
+            </h:selectOneListbox>
 
-            <!--        <h:column>-->
-            <!--            <f:facet name="header">Dodatkowe informacje</f:facet>-->
-            <!--            #{var.additionalInformation}-->
-            <!--        </h:column>-->
+        </h:panelGrid>
 
-            <!--        <h:column>-->
-            <!--            <f:facet name="header">Daty dostarczenia</f:facet>-->
-            <!--            #{UserManager.getDateFromSet(var.deliverDateSet)}-->
-            <!--        </h:column>-->
+        <h:commandButton value="Przygotuj" action="#{MenuManager.prepare()}">
+            <f:ajax event="click" execute="@this" render="@form"/>
+        </h:commandButton>
 
-            <!--        <h:column>-->
-            <!--            <f:facet name="header">Wybrane pozycje</f:facet>-->
-            <!--            #{DishManager.getDishFromSet(var.subscribedDishes)}-->
-            <!--        </h:column>-->
+    </h:form>
 
-        </h:dataTable>
+    <h:form id="form2" rendered="#{LoginManager.checkEmployee()}">
 
+        <h:panelGrid columns="2">
+
+            <h:outputText value="Wybierz klienta"/>
+            <h:selectOneListbox value="#{MenuManager.idSelectedUser}">
+                <f:selectItem itemLabel="" itemValue="#{null}"/>
+                <c:forEach var="user" items="#{UserManager.userRepository.allUsers}" >
+                    <f:selectItem itemLabel="#{user.name}" itemValue="#{user.id}"/>
+                </c:forEach>
+                <f:ajax event="change" execute="@this" render="@form"/>
+            </h:selectOneListbox>
+
+            <h:outputText value="Od"/>
+            <p:calendar id="dateFrom2" value="#{UserManager.billStartDate}" mode="popup" required="true" requiredMessage="To pole nie moze byc puste"/>
+
+            <h:outputText value="Do"/>
+            <p:calendar id="dateTo2" value="#{UserManager.billEndDate}" mode="popup" required="true" requiredMessage="To pole nie moze byc puste"/>
+
+        </h:panelGrid>
+
+        <h:commandButton value="Generuj rachunek" action="#{UserManager.generateBill(MenuManager.idSelectedUser)}"/>
+    </h:form>
 
     <br/>
-    <h:form>
+
+    <h:form rendered="#{LoginManager.checkCustomer()}">
 
         <h4>Gnerowanie rachunku</h4>
 
         <h:panelGrid columns="2">
 
             <h:outputText value="Od"/>
-            <p:calendar id="dateFrom" value="#{UserManager.billDateFrom}" mode="popup" />
+            <p:calendar id="dateFrom" value="#{UserManager.billStartDate}" mode="popup" required="true" requiredMessage="To pole nie moze byc puste"/>
 
             <h:outputText value="Do"/>
-            <p:calendar id="dateTo" value="#{UserManager.billDateTo}" mode="popup" />
+            <p:calendar id="dateTo" value="#{UserManager.billEndDate}" mode="popup" required="true" requiredMessage="To pole nie moze byc puste"/>
 
             <h:commandButton value="Generuj rachunek" action="#{UserManager.generateBill(LoginManager.loggedUser.id)}"/>
 
@@ -139,24 +153,18 @@
 
     </h:form>
 
-        <h:form rendered="#{LoginManager.checkRoleAuthority('ADMIN')}">
+        <h:form rendered="#{LoginManager.checkAdmin()}">
 
             <h4>Pozycje do zaakceptowania</h4>
-
-            <h:dataTable id="poisitonToApproved" value="#{DishManager.dishesOrder.toApproved}" var="var" border="1" cellpadding="6px">
+            <h:dataTable id="dishesToAccept" value="#{MenuManager.getAllDishesToAccept()}" var="var" border="1" cellpadding="6px">
                 <h:column>
-                    <f:facet name="header">Nazwa pozycji</f:facet>
-                    #{var.dishName}
-                </h:column>
-
-                <h:column>
-                    <f:facet name="header">Opis pozycji</f:facet>
-                    #{var.dishDescription}
+                    <f:facet name="header">Potrawa</f:facet>
+                    #{var.name}
                 </h:column>
 
                 <h:column>
                     <f:facet name="header">Zatwierdź</f:facet>
-                    <h:commandButton value="Zaakceptuj" action="#{DishManager.approvedDish(var.id)}">
+                    <h:commandButton value="Zaakceptuj" action="#{MenuManager.approvedDish(var.id)}">
                         <f:ajax event="click" execute="@this" render="@form"/>
                     </h:commandButton>
                 </h:column>
@@ -167,28 +175,67 @@
 
 
     <br/>
-        <h:form rendered="#{LoginManager.checkRoleAuthority('MANAGER')}">
+        <h:form rendered="#{LoginManager.checkManager()}">
 
             <h4>Pozycje dnia</h4>
 
-            <h:dataTable id="dayPosition" value="#{DishManager.dishManager.allDishes}" var="var" border="1" cellpadding="6px">
+            <h:dataTable id="dayPosition" value="#{MenuManager.dishRepository.allDishes}" var="var" border="1" cellpadding="6px">
                 <h:column>
-                    <f:facet name="header">Nazwa pozycji</f:facet>
-                    #{var.dishName}
+                    <f:facet name="header">Danie</f:facet>
+                    #{var.name}
                 </h:column>
 
                 <h:column>
-                    <f:facet name="header">Ustaw pozycję </f:facet>
-                    <h:commandButton value="Ustaw" action="#{DishManager.setDayDish(var.id)}"/>
+                    <f:facet name="header">Ustaw daniem dnia </f:facet>
+                    <h:commandButton value="Ustaw" action="#{TopDishManager.setDishDay(var.id)}"/>
                 </h:column>
-
             </h:dataTable>
 
         </h:form>
 
+
+    <h:form id="form-supplier1" rendered="#{LoginManager.checkSupplier()}">
+
+        <h:panelGrid columns="2">
+
+            <h:outputText value="Wybierz zamówienie"/>
+            <h:selectOneListbox value="#{MenuManager.idSelectedOrder}">
+                <f:selectItem itemLabel="" itemValue="#{null}"/>
+                <c:forEach var="order" items="#{MenuManager.orderRepository.getAllOrdersByStatus(MenuManager.READY)}" >
+                    <f:selectItem itemLabel="#{order.dishesToString()}" itemValue="#{order.id}"/>
+                </c:forEach>
+                <f:ajax event="change" execute="@this" render="@form"/>
+            </h:selectOneListbox>
+
+        </h:panelGrid>
+
+        <h:commandButton value="Dostarcz" action="#{MenuManager.deliver()}">
+            <f:ajax event="click" execute="@this" render="@form"/>
+        </h:commandButton>
+
+        <h:panelGrid columns="2">
+
+            <h:outputText value="Wybierz zamówienie"/>
+            <h:selectOneListbox value="#{MenuManager.idSelectedOrder}">
+                <f:selectItem itemLabel="" itemValue="#{null}"/>
+                <c:forEach var="order" items="#{MenuManager.orderRepository.getAllOrdersByStatus(MenuManager.SUPPLIED)}" >
+                    <f:selectItem itemLabel="#{order.dishesToString()}" itemValue="#{order.id}"/>
+                </c:forEach>
+                <f:ajax event="change" execute="@this" render="@form"/>
+            </h:selectOneListbox>
+
+        </h:panelGrid>
+
+        <h:commandButton value="Ustaw opłacone" action="#{MenuManager.setPaid()}">
+            <f:ajax event="click" execute="@this" render="@form"/>
+        </h:commandButton>
+
+    </h:form>
+
+
     <br/>
     <h:form>
-        <h:commandButton value="Wróć" action="#{DishManager.redirectToPage('catering_products')}"/>
+        <h:commandButton value="Wróć" action="#{MenuManager.redirectToPage('catering_wall')}"/>
         <h:commandButton value="Wyloguj" action="#{LoginManager.logout()}"/>
     </h:form>
 

@@ -12,37 +12,34 @@
 <h:head>
     <title>Catering</title>
     <f:metadata>
-        <f:viewAction action="#{LoginManager.checkAuthorization(true,'EMPLOYEE')}" />
+        <f:viewAction action="#{LoginManager.checkAuthorization(true,'MANAGER')}" />
     </f:metadata>
 </h:head>
 
 <h:body>
 
-    <h2>Dodawanie / edycja kategorii</h2>
+    <h2>Dodaj, zmodyfikuj, usuń</h2>
 
     <h:form>
 
         <h:panelGrid columns="2">
 
             <h:outputText value="Modyfikuj "/>
-            <p:selectBooleanCheckbox value="#{ModifyMenuManager.modifyCategory}">
-                <f:ajax event="click" execute="@this" render="@none"/>
-            </p:selectBooleanCheckbox>
+            <h:selectBooleanCheckbox value="#{ModifyMenuManager.modifyCategory}">
+                <f:ajax event="click" execute="@this" render="@form"/>
+            </h:selectBooleanCheckbox>
 
             <h:outputText value="Kategorie " rendered="#{ModifyMenuManager.modifyCategory}"/>
             <p:selectOneListbox value="#{ModifyMenuManager.selectedCategory}" rendered="#{ModifyMenuManager.modifyCategory}">
                 <f:selectItem itemLabel="" itemValue="-1L"/>
-                <c:forEach var="ct" items="#{ModifyMenuManager.dishManager.getAllCategory()}" >
-                    <f:selectItem itemLabel="#{ct.categoryName}" itemValue="#{ct.id}"/>
+                <c:forEach var="ct" items="#{ModifyMenuManager.categoryRepository.allCategories}" >
+                    <f:selectItem itemLabel="#{ct.name}" itemValue="#{ct.id}"/>
                 </c:forEach>
                 <f:ajax event="change" listener="#{ModifyMenuManager.updateCategoryModifyInput()}" execute="@this" render="@form"/>
             </p:selectOneListbox>
 
             <h:outputText value="Nazwa "/>
-            <h:inputText value="#{ModifyMenuManager.nameCategory}"/>
-
-            <h:outputText value="Opis "/>
-            <h:inputText value="#{ModifyMenuManager.descriptionCategory}"/>
+            <h:inputText value="#{ModifyMenuManager.categoryName}"/>
 
         </h:panelGrid>
 
@@ -54,7 +51,7 @@
 
     <br/>
     <h:form>
-        <p:commandButton value="Wróć" action="#{DishManager.redirectToPage('catering_products')}" style="margin-right:20px;"/>
+        <p:commandButton value="Wróć" action="#{MenuManager.redirectToPage('catering_wall')}" style="margin-right:20px;"/>
         <p:commandButton value="Wyloguj" action="#{LoginManager.logout()}" style="margin-right:20px;" />
     </h:form>
 

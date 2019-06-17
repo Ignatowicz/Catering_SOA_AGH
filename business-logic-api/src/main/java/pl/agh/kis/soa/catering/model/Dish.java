@@ -25,10 +25,10 @@ public class Dish extends AbstractModel {
     @Column(name = "price", nullable = false)
     private Float price;
 
-    @Column(name = "accepted", columnDefinition = "BOOLEAN DEFAULT false")
+    @Column(name = "accepted")
     private Boolean accepted;
 
-    @Column(name = "day_dish", columnDefinition = "BOOLEAN DEFAULT false")
+    @Column(name = "day_dish")
     private Boolean dishDay;
 
     @ManyToOne(targetEntity = Category.class)

@@ -11,6 +11,21 @@ import java.util.Date;
 
 public class InitDatabase {
 
+    @EJB(lookup = "java:global/business-logic-implementation/UserRepository")
+    private IUserRepository userRepository;
+
+    @EJB(lookup = "java:global/business-logic-implementation/CategoryRepository")
+    private ICategoryRepository categoryRepository;
+
+    @EJB(lookup = "java:global/business-logic-implementation/DishRepository")
+    private IDishRepository dishRepository;
+
+    @EJB(lookup = "java:global/business-logic-implementation/OrderRepository")
+    private IOrderRepository orderRepository;
+
+    @EJB(lookup = "java:global/business-logic-implementation/SubscriptionRepository")
+    private ISubscriptionRepository subscriptionRepository;
+
     private static InitDatabase instance;
 
     private User admin;
@@ -30,21 +45,6 @@ public class InitDatabase {
     private Dish rosol;
     private Dish szarlotka;
 
-    @EJB(lookup = "java:global/business-logic-implementation/UserRepository")
-    private IUserRepository userRepository;
-
-    @EJB(lookup = "java:global/business-logic-implementation/CategoryRepository")
-    private ICategoryRepository categoryRepository;
-
-    @EJB(lookup = "java:global/business-logic-implementation/DishRepository")
-    private IDishRepository dishRepository;
-
-    @EJB(lookup = "java:global/business-logic-implementation/OrderRepository")
-    private IOrderRepository orderRepository;
-
-    @EJB(lookup = "java:global/business-logic-implementation/SubscriptionRepository")
-    private ISubscriptionRepository subscriptionRepository;
-
     private InitDatabase() {
 
     }
@@ -58,6 +58,7 @@ public class InitDatabase {
     }
 
     private void init() {
+        System.out.println();
         initUsers();
         initCategories();
         initDishes();

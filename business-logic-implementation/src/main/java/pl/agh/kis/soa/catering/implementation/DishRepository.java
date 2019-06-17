@@ -8,10 +8,7 @@ import pl.agh.kis.soa.catering.model.Dish;
 
 import javax.ejb.Remote;
 import javax.ejb.Stateless;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
 
@@ -60,6 +57,7 @@ public class DishRepository implements IDishRepository {
                 DishDao.getInstance().updateItem(elem);
             }
         });
+
         Dish dish = DishDao.getInstance().getItem(dishId);
         dish.setDishDay(true);
         DishDao.getInstance().updateItem(dish);
@@ -67,12 +65,23 @@ public class DishRepository implements IDishRepository {
 
     @Override
     public Dish getDishDay() {
+//        Optional.of((dishes.stream().noneMatch(e -> e.getDishDay().equals(true)))
+//        return Optional.of(dishes.stream()
+//                .filter(e -> e.getDishDay().equals(true))
+//                .collect(Collectors.toList())
+//                .get(0))
+//                .orElse(null
+
         List<Dish> dishes = DishDao.getInstance().getItems();
-        return Optional.of(dishes.stream()
-                .filter(e -> e.getDishDay().equals(true))
-                .collect(Collectors.toList())
-                .get(0))
-                .orElse(null);
+
+        if (dishes.isEmpty())
+            return null;
+
+        for (Dish d : dishes) {
+            if (d.getDishDay())
+                return d;
+        }
+        return null;
     }
 
     @Override
@@ -82,9 +91,21 @@ public class DishRepository implements IDishRepository {
     }
 
     @Override
-    public List<Object> getAllDishesToAccept() {
-        return new ArrayList<>(Arrays.asList(DishDao.getInstance().getItems().stream()
+    public List<Dish> getAllDishesToAccept() {
+
+        if (DishDao.getInstance().getItems().isEmpty()) {
+            return null;
+        }
+
+        List<Object> objects = new ArrayList<Object>(Arrays.asList(DishDao.getInstance().getItems().stream()
                 .filter(o -> o.getAccepted().equals(false)).toArray()));
+
+        List<Dish> dishes = new ArrayList<>();
+        for (Object o : objects) {
+            dishes.add((Dish) o);
+        }
+
+        return dishes;
     }
 
     @Override

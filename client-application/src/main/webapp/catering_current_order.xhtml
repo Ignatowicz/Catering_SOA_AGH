@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html
-        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
@@ -25,73 +24,74 @@
         <h:panelGrid columns="2">
 
             <p>Zawartość koszyka</p>
-            <h:Table id="SelectedBuy" value="#{DishManager.dishesOrder}" var="ps" border="1" cellpadding="6px">
+            <h:dataTable id="SelectedBuy" value="#{MenuManager.dishesOrder}" var="dish" border="1" cellpadding="6px">
                 <h:column>
                     <f:facet name="header">Nazwa</f:facet>
-                    #{ps.dishName}
+                    #{dish.name}
                 </h:column>
 
                 <h:column>
                     <f:facet name="header">Cena</f:facet>
-                    #{ps.dishPrice}
+                    #{dish.price}
                 </h:column>
 
-            </h:Table>
+            </h:dataTable>
 
 
-            <p>Dodatkowe informacje</p>
-            <h:inputTextarea value="#{DishManager.orderDetails}"/>
 
             <p>Zamówienie cykliczne </p>
-            <h:selectBooleanCheckbox value="#{DishManager.cyclicOrder}" id="cyclicOrder">
+            <h:selectBooleanCheckbox value="#{MenuManager.cyclicOrder}" id="cyclicOrder">
                 <f:ajax event="change" execute="@this" render="@form"/>
             </h:selectBooleanCheckbox>
 
-            <h:outputText value=" dostarczenia" rendered="#{DishManager.cyclicOrder eq false}"/>
-            <p:calendar id="dateDeliver" value="#{DishManager.orderDeliver}" mode="popup" rendered="#{DishManager.cyclicOrder eq false}">
+            <h:outputText value=" dostarczenia" rendered="#{MenuManager.cyclicOrder eq false}"/>
+            <p:calendar id="dateDeliver" value="#{MenuManager.orderDeliver}" mode="popup" rendered="#{MenuManager.cyclicOrder eq false}">
                 <p:ajax event="dateSelect" execute="@this" render="@form"/>
             </p:calendar>
 
-            <h:outputText value="Godzina dostarczenia" rendered="#{DishManager.cyclicOrder eq true}"/>
-            <h:outputText value="Minuta dostarczenia" rendered="#{DishManager.cyclicOrder eq true}"/>
+            <h:outputText value="Godzina dostarczenia" rendered="#{MenuManager.cyclicOrder eq true}"/>
+            <h:outputText value="Minuta dostarczenia" rendered="#{MenuManager.cyclicOrder eq true}"/>
 
             <h:panelGrid columns="1" style="margin-bottom: 5px">
-                <p:inputText id="deliverHour" value="#{DishManager.deliverHour}"/>
-                <p:slider for="deliverHour" minValue="0" maxValue="24" step="1" />
+                <p:inputText id="deliverHour" value="#{MenuManager.deliverHour}"
+                             required="true" requiredMessage="To pole nie moze byc puste" minValue="0" maxValue="23" step="1"/>
+<!--                <p:slider for="deliverHour" minValue="0" maxValue="24" step="1" />-->
             </h:panelGrid>
             <h:panelGrid columns="1" style="margin-bottom: 5px">
-                <p:inputText id="deliverMinute" value="#{DishManager.deliverMinute}"/>
-                <p:slider for="deliverMinute" minValue="0" maxValue="60" step="1" />
+                <p:inputText id="deliverMinute" value="#{MenuManager.deliverMinute}"
+                             required="true" requiredMessage="To pole nie moze byc puste" minValue="0" maxValue="59" step="1"/>
+<!--                <p:slider for="deliverMinute" minValue="0" maxValue="60" step="1" />-->
             </h:panelGrid>
 
-            <h:outputText value="Dodaj datę dostarczenia" rendered="#{DishManager.cyclicOrder eq true}"/>
-            <p:calendar id="dateCyclicDeliver" value="#{DishManager.orderDeliver}" mode="popup" rendered="#{DishManager.cyclicOrder eq true}"/>
+            <h:outputText value="Podaj datę dostarczenia" rendered="#{MenuManager.cyclicOrder eq true}"/>
+            <p:calendar id="dateCyclicDeliver" value="#{MenuManager.orderDeliver}" mode="popup" rendered="#{MenuManager.cyclicOrder eq true}"
+                        required="true" requiredMessage="To pole nie moze byc puste"/>
 
-            <h:commandButton value="Dodaj datę" action="#{DishManager.addCyclicDates()}" rendered="#{DishManager.cyclicOrder eq true}"/>
+            <h:commandButton value="Dodaj datę" action="#{MenuManager.addCyclicDates()}" rendered="#{MenuManager.cyclicOrder eq true}"/>
             <h:outputText value=""/>
 
-            <h:outputLabel rendered="#{DishManager.cyclicOrder eq true}">Daty zamówień</h:outputLabel>
-            <h:Table id="cyclicDates" value="#{DishManager.cyclicOrderDeliver}" var="dt" border="1" cellpadding="6px" rendered="#{DishManager.cyclicOrder eq true}">
+            <h:outputLabel rendered="#{MenuManager.cyclicOrder eq true}">Daty zamówień</h:outputLabel>
+            <h:dataTable id="cyclicDates" value="#{MenuManager.cyclicOrderDeliver}" var="dt" border="1" cellpadding="6px" rendered="#{MenuManager.cyclicOrder eq true}">
                 <h:column>
-                    <f:facet name="header"></f:facet>
+                    <f:facet name="header">Data</f:facet>
                     #{dt.toString()}
                 </h:column>
 
                 <h:column>
                     <f:facet name="header">Akcje</f:facet>
-                    <h:commandButton value="Usuń" action="#{DishManager.removeDateFromCyclicOrder(dt)}"/>
+                    <h:commandButton value="Usuń" action="#{MenuManager.removeDateFromCyclicOrder(dt)}"/>
                 </h:column>
-            </h:Table>
+            </h:dataTable>
 
         </h:panelGrid>
 
-        <h:outputLabel value="Do zapłacenia: #{DishManager.sumOrderPrice()}">
+        <h:outputLabel value="Do zapłacenia: #{MenuManager.sumOrderPrice()}">
             <f:convertNumber minFractionDigits="2" />
         </h:outputLabel>
         <br/>
 
-        <h:commandButton value="Zamów" action="#{DishManager.makeOrder(LoginManager.loggedUser.id)}"/>
-        <h:commandButton value="Wróć" action="/catering_products.xhtml?faces-redirect=true"/>
+        <h:commandButton value="Zamów" action="#{MenuManager.makeOrder(LoginManager.loggedUser.id)}"/>
+        <h:commandButton value="Wróć" action="/catering_wall.xhtml?faces-redirect=true"/>
 
     </h:form>
 
