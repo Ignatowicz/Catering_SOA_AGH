@@ -5,7 +5,9 @@ import org.jboss.resteasy.client.jaxrs.ResteasyClient;
 import org.jboss.resteasy.client.jaxrs.ResteasyClientBuilder;
 import org.jboss.resteasy.client.jaxrs.ResteasyWebTarget;
 
+import javax.ws.rs.HeaderParam;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Request;
 import javax.ws.rs.core.Response;
 import java.util.Scanner;
 
@@ -47,7 +49,9 @@ public class RestClient {
     private static void getAllMenuCategoriesAsJson() {
         ResteasyClient client = new ResteasyClientBuilder().build();
         ResteasyWebTarget target = client.target("http://localhost:8080/rest/api/category");
-        Response response = target.request().accept(MediaType.APPLICATION_JSON).get();
+        Response response = target.request()
+                .header("Accept-Language", "en")
+                .accept(MediaType.APPLICATION_JSON).get();
         printResponse(response);
     }
 

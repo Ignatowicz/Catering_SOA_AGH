@@ -8,12 +8,10 @@ import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
-@Getter
 @Setter
 @NoArgsConstructor
 @Entity
 @XmlRootElement
-@XmlTransient
 @Table(name = "Dishes")
 @Access(AccessType.FIELD)
 public class Dish extends AbstractModel {
@@ -38,4 +36,28 @@ public class Dish extends AbstractModel {
     @ManyToOne(targetEntity = Category.class)
     private Category category;
 
+    public Long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Float getPrice() {
+        return price;
+    }
+
+    public Boolean getAccepted() {
+        return accepted;
+    }
+
+    public Boolean getDishDay() {
+        return dishDay;
+    }
+
+    @XmlTransient
+    public Category getCategory() {
+        return category;
+    }
 }

@@ -41,7 +41,7 @@ public class CategoryService {
         List<pl.agh.kis.soa.catering.model.Category> categories = (List<pl.agh.kis.soa.catering.model.Category>)(Object)categoryRepository.getAllCategories();
 
         for(pl.agh.kis.soa.catering.model.Category category : categories)
-            category.setName(category.getName() + "PL");
+            category.setName(category.getName() + "EN");
 
         return categories;
     }
