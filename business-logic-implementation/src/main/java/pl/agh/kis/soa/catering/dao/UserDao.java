@@ -53,4 +53,5 @@ public class UserDao extends AbstractModelDao<User> {
             return null;
         }
     }
+
 }

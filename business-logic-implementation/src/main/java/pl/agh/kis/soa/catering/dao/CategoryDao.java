@@ -26,4 +26,5 @@ public class CategoryDao extends AbstractModelDao<Category> {
         emFactory = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
         em = emFactory.createEntityManager();
     }
+
 }

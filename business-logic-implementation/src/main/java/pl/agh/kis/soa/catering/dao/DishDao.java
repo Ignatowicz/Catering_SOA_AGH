@@ -17,4 +17,5 @@ public class DishDao extends AbstractModelDao<Dish> {
         }
         return instance;
     }
+
 }

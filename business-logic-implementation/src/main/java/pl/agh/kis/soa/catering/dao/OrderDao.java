@@ -17,4 +17,5 @@ public class OrderDao extends AbstractModelDao<Order> {
         }
         return instance;
     }
+
 }

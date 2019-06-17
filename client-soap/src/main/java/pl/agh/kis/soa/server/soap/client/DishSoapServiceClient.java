@@ -7,6 +7,7 @@ import pl.agh.kis.soa.server.soap.implementations.DishSoapServiceImplService;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+
 public class DishSoapServiceClient {
 
     public static void main(String[] args) {
@@ -18,13 +19,13 @@ public class DishSoapServiceClient {
 
 
     private static void ioLoop(String response, Scanner scanner, DishSoapService dishSoapService) {
-        if(response.toLowerCase().equals("t")) {
+        if (response.toLowerCase().equals("t")) {
             System.out.print("Dodać danie do menu? [T/N]\n>> ");
 
-            try{
+            try {
                 response = scanner.next();
 
-                if(response.toLowerCase().equals("t")) {
+                if (response.toLowerCase().equals("t")) {
                     System.out.print("Nazwa dania: ");
                     String name = scanner.next();
 
@@ -37,13 +38,14 @@ public class DishSoapServiceClient {
                     dishSoapService.addDishToCategory(name, price, categoryId);
                 }
 
-            } catch(ServerSOAPFaultException e) {
+            } catch (ServerSOAPFaultException e) {
                 e.printStackTrace();
-            } catch(InputMismatchException e) {
+            } catch (InputMismatchException e) {
                 System.out.println("Niepoprawny format danych wejściowych!");
             } finally {
                 ioLoop(response, scanner, dishSoapService);
             }
         }
     }
+
 }

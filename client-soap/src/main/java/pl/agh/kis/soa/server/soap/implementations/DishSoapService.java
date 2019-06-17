@@ -1,4 +1,3 @@
-
 package pl.agh.kis.soa.server.soap.implementations;
 
 import javax.jws.WebMethod;
@@ -24,7 +23,6 @@ public interface DishSoapService {
 
 
     /**
-     * 
      * @param dishPrice
      * @param dishName
      * @param categoryId
@@ -33,11 +31,11 @@ public interface DishSoapService {
     @RequestWrapper(localName = "addDishToCategory", targetNamespace = "http://interfaces.soap.server.soa.kis.agh.pl/", className = "pl.agh.kis.soa.server.soap.interfaces.AddDishToCategory")
     @ResponseWrapper(localName = "addDishToCategoryResponse", targetNamespace = "http://interfaces.soap.server.soa.kis.agh.pl/", className = "pl.agh.kis.soa.server.soap.interfaces.AddDishToCategoryResponse")
     public void addDishToCategory(
-        @WebParam(name = "dishName", targetNamespace = "")
-        String dishName,
-        @WebParam(name = "dishPrice", targetNamespace = "")
-        Float dishPrice,
-        @WebParam(name = "categoryId", targetNamespace = "")
-        Long categoryId);
+            @WebParam(name = "dishName", targetNamespace = "")
+                    String dishName,
+            @WebParam(name = "dishPrice", targetNamespace = "")
+                    Float dishPrice,
+            @WebParam(name = "categoryId", targetNamespace = "")
+                    Long categoryId);
 
 }

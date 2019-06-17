@@ -1,6 +1,5 @@
 package pl.agh.kis.soa.server.soap.implementations;
 
-
 import pl.agh.kis.soa.catering.api.ICategoryRepository;
 import pl.agh.kis.soa.catering.api.IDishRepository;
 import pl.agh.kis.soa.catering.model.Dish;
@@ -9,6 +8,7 @@ import pl.agh.kis.soa.server.soap.interfaces.DishSoapService;
 import javax.ejb.EJB;
 import javax.jws.WebMethod;
 import javax.jws.WebService;
+
 
 @WebService(endpointInterface = "pl.agh.kis.soa.server.soap.interfaces.DishSoapService")
 public class DishSoapServiceImpl implements DishSoapService {

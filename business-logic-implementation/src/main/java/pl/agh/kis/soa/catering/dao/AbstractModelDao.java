@@ -60,4 +60,5 @@ public abstract class AbstractModelDao<T extends AbstractModel> {
         em.remove(em.contains(item) ? item : em.merge(item));
         em.getTransaction().commit();
     }
+
 }

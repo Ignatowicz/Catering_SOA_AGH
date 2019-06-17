@@ -1,4 +1,3 @@
-
 package pl.agh.kis.soa.server.soap.implementations;
 
 import java.net.MalformedURLException;
@@ -19,8 +18,7 @@ import javax.xml.ws.WebServiceFeature;
  */
 @WebServiceClient(name = "DishSoapServiceImplService", targetNamespace = "http://implementations.soap.server.soa.kis.agh.pl/", wsdlLocation = "http://localhost:8080/service?wsdl")
 public class DishSoapServiceImplService
-    extends Service
-{
+    extends Service {
 
     private final static URL DISHSOAPSERVICEIMPLSERVICE_WSDL_LOCATION;
     private final static WebServiceException DISHSOAPSERVICEIMPLSERVICE_EXCEPTION;
@@ -63,9 +61,7 @@ public class DishSoapServiceImplService
     }
 
     /**
-     * 
-     * @return
-     *     returns DishSoapService
+     * @return returns DishSoapService
      */
     @WebEndpoint(name = "DishSoapServiceImplPort")
     public DishSoapService getDishSoapServiceImplPort() {
@@ -73,11 +69,8 @@ public class DishSoapServiceImplService
     }
 
     /**
-     * 
-     * @param features
-     *     A list of {@link javax.xml.ws.WebServiceFeature} to configure on the proxy.  Supported features not in the <code>features</code> parameter will have their default values.
-     * @return
-     *     returns DishSoapService
+     * @param features A list of {@link javax.xml.ws.WebServiceFeature} to configure on the proxy.  Supported features not in the <code>features</code> parameter will have their default values.
+     * @return returns DishSoapService
      */
     @WebEndpoint(name = "DishSoapServiceImplPort")
     public DishSoapService getDishSoapServiceImplPort(WebServiceFeature... features) {
@@ -85,7 +78,7 @@ public class DishSoapServiceImplService
     }
 
     private static URL __getWsdlLocation() {
-        if (DISHSOAPSERVICEIMPLSERVICE_EXCEPTION!= null) {
+        if (DISHSOAPSERVICEIMPLSERVICE_EXCEPTION != null) {
             throw DISHSOAPSERVICEIMPLSERVICE_EXCEPTION;
         }
         return DISHSOAPSERVICEIMPLSERVICE_WSDL_LOCATION;

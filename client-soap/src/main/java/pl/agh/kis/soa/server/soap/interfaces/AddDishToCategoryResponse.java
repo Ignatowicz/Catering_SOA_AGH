@@ -1,4 +1,3 @@
-
 package pl.agh.kis.soa.server.soap.interfaces;
 
 import javax.xml.bind.annotation.XmlAccessType;

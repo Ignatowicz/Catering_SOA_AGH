@@ -1,24 +1,23 @@
 package pl.agh.kis.soa.catering;
 
-import org.jboss.resteasy.client.jaxrs.BasicAuthentication;
 import org.jboss.resteasy.client.jaxrs.ResteasyClient;
 import org.jboss.resteasy.client.jaxrs.ResteasyClientBuilder;
 import org.jboss.resteasy.client.jaxrs.ResteasyWebTarget;
 
-import javax.ws.rs.HeaderParam;
 import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Request;
 import javax.ws.rs.core.Response;
 import java.util.Scanner;
 
+
 public class RestClient {
+
     public static void main(String[] args) {
         Scanner reader = new Scanner(System.in);
 
         int option = 1;
         Long categoryId;
 
-        while(option != 0) {
+        while (option != 0) {
             System.out.print("Język: [pl/en] \n>> ");
             String language = reader.next();
 
@@ -29,7 +28,7 @@ public class RestClient {
             System.out.print("0: wyjście z programu \n>> ");
 
             option = reader.nextInt();
-            switch(option) {
+            switch (option) {
                 case 1:
                     getCategories(language, MediaType.APPLICATION_XML);
                     break;
@@ -77,4 +76,5 @@ public class RestClient {
         System.out.println(value + "\n");
         response.close();
     }
+
 }

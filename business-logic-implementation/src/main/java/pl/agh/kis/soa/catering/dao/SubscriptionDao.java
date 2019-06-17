@@ -17,4 +17,5 @@ public class SubscriptionDao extends AbstractModelDao<Subscription> {
         }
         return instance;
     }
+
 }
