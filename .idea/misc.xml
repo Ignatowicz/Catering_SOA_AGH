@@ -3,6 +3,7 @@
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/business-logic-rest" />
+    <file type="web" url="file://$PROJECT_DIR$/business-logic-soap" />
     <file type="web" url="file://$PROJECT_DIR$/client-application" />
     <file type="web" url="file://$PROJECT_DIR$/client-rest" />
     <file type="web" url="file://$PROJECT_DIR$/client-soap" />

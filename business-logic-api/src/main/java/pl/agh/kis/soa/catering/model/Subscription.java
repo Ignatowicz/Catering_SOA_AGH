@@ -7,6 +7,7 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.util.*;
 
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -28,5 +29,14 @@ public class Subscription extends AbstractModel {
 
     @ManyToOne
     private User user;
+
+    public String dishesToString() {
+        StringBuilder sb = new StringBuilder();
+        for (Dish dish : dishes) {
+            sb.append(dish.getName());
+            sb.append(", ");
+        }
+        return sb.toString();
+    }
 
 }

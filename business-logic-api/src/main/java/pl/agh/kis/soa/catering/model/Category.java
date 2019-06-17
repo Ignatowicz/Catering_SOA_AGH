@@ -5,13 +5,16 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.util.HashSet;
 import java.util.Set;
+
 
 @Getter
 @Setter
 @NoArgsConstructor
 @Entity
+@XmlRootElement
 @Table(name = "Categories")
 @Access(AccessType.FIELD)
 public class Category extends AbstractModel {

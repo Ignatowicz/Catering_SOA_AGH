@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="client-rest" />
+        <module name="business-logic-soap" />
         <module name="business-logic-rest" />
         <module name="client-application" />
         <module name="dish-supplier" />

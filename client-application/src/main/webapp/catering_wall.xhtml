@@ -18,39 +18,40 @@
 
 <h:body>
 
-
     <h2>Pozycja dnia</h2>
 
-    <h:outputLabel value="#{DishManager.getDayDish()}"/>
+    <h:outputLabel value="#{MenuManager.getDishDay()}"/>
     <br/>
 
-    <h2>Dania w ofercie</h2>
 
-    <h:form id="form">
+
+    <h:form id="form" rendered="#{LoginManager.checkCustomer()}">
+
+        <h2>Dania w ofercie</h2>
 
         <h:panelGrid columns="2">
 
             <h:outputText value="Wybierz kategorię"/>
-            <h:selectOneListbox value="#{DishManager.idSelectedCategory}">
-                <f:selectItem itemLabel="" itemValue="null"/>
-                <c:forEach var="ct" items="#{DishManager.getAllCategories()}" >
-                    <f:selectItem itemLabel="#{ct.categoryName}" itemValue="#{ct.id}"/>
+            <h:selectOneListbox value="#{MenuManager.idSelectedCategory}">
+                <f:selectItem itemLabel="" itemValue="#{null}"/>
+                <c:forEach var="ct" items="#{MenuManager.getAllCategories()}" >
+                    <f:selectItem itemLabel="#{ct.name}" itemValue="#{ct.id}"/>
                 </c:forEach>
-                <f:ajax event="change" listener="#{DishManager.filterDishes()}" execute="@this" render="@form"/>
+                <f:ajax event="change" listener="#{MenuManager.filterDishes()}" execute="@this" render="@form"/>
             </h:selectOneListbox>
 
             <h:outputText value="Wybierz danie"/>
-            <h:selectOneListbox value="#{DishManager.idSelectedDish}">
-                <f:selectItem itemLabel="" itemValue="null"/>
-                <c:forEach var="ps" items="#{DishManager.selectedDishesView}" >
-                    <f:selectItem itemLabel="#{ps.dishName}" itemValue="#{ps.id}"/>
+            <h:selectOneListbox value="#{MenuManager.idSelectedDish}">
+                <f:selectItem itemLabel="" itemValue="#{null}"/>
+                <c:forEach var="dish" items="#{MenuManager.selectedDishesView}" >
+                    <f:selectItem itemLabel="#{dish.name}" itemValue="#{dish.id}"/>
                 </c:forEach>
                 <f:ajax event="change" execute="@this" render="@form"/>
             </h:selectOneListbox>
 
         </h:panelGrid>
 
-        <h:commandButton value="Dodaj wybrane" action="#{DishManager.addSelectedDishToOrder()}">
+        <h:commandButton value="Dodaj wybrane" action="#{MenuManager.addSelectedDishToOrder()}">
             <f:ajax event="click" execute="@this" render="@form"/>
         </h:commandButton>
 
@@ -58,22 +59,22 @@
         <br/>
 
         <h4>Dodane do koszyka</h4>
-        <h:Table id="SelectedBuy" value="#{DishManager.dishesOrder}" var="ps" border="1" cellpadding="6px">
+        <h:dataTable id="SelectedBuy" value="#{MenuManager.dishesOrder}" var="dish" border="1" cellpadding="6px">
             <h:column>
                 <f:facet name="header">Nazwa</f:facet>
-                #{ps.dishName}
+                #{dish.name}
             </h:column>
 
             <h:column>
                 <f:facet name="header">Cena</f:facet>
-                #{ps.dishPrice}
+                #{dish.price}
             </h:column>
 
             <h:column>
                 <f:facet name="header">Akcje</f:facet>
-                <h:commandButton value="Usuń" action="#{DishManager.removeSelectedDishFromOrder(ps)}"/>
+                <h:commandButton value="Usuń" action="#{MenuManager.removeSelectedDishFromOrder(dish)}"/>
             </h:column>
-        </h:Table>
+        </h:dataTable>
 
         <h:commandButton value="Przejdź do podsumowania" action="/catering_current_order.xhtml?faces-redirect=true"/>
 
@@ -82,18 +83,17 @@
 
     </h:form>
 
+
     <br/>
 
-
-
-    <h:form rendered="#{LoginManager.checkRoleAuthority('EMPLOYEE')}">
-        <h:commandButton value="Modyfikuj kategorię" action="#{DishManager.redirectToPage('add_category')}"/>
-        <h:commandButton value="Modyfikuj pozycję" action="#{DishManager.redirectToPage('add_dish')}"/>
+    <h:form rendered="#{LoginManager.checkManager()}">
+        <h:commandButton value="Modyfikuj kategorię" action="#{MenuManager.redirectToPage('add_category')}"/>
+        <h:commandButton value="Modyfikuj pozycję" action="#{MenuManager.redirectToPage('add_dish')}"/>
     </h:form>
 
     <br/>
     <h:form>
-        <h:commandButton value="Panel użytkownika" action="#{DishManager.redirectToPage('user_panel')}"/>
+        <h:commandButton value="Panel użytkownika" action="#{MenuManager.redirectToPage('user_panel')}"/>
         <h:commandButton value="Wyloguj" action="#{LoginManager.logout()}"/>
     </h:form>
 

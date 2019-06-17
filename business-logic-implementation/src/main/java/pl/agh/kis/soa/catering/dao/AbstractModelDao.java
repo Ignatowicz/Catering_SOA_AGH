@@ -25,7 +25,7 @@ public abstract class AbstractModelDao<T extends AbstractModel> {
 
     public List<T> getItems() {
         TypedQuery query = em.createQuery("SELECT data FROM " + className + " data", specificClass);
-        return query.getResultList();
+        return (List<T>) query.getResultList();
     }
 
     public T getItem(Long itemId) {
@@ -60,4 +60,5 @@ public abstract class AbstractModelDao<T extends AbstractModel> {
         em.remove(em.contains(item) ? item : em.merge(item));
         em.getTransaction().commit();
     }
+
 }

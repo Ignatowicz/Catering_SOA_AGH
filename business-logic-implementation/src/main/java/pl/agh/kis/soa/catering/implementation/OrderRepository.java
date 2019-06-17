@@ -66,36 +66,43 @@ public class OrderRepository implements IOrderRepository {
     }
 
     @Override
-    public List<Order> getUserOrdersDueToDate(Long userId, Date date) {
+    public List<Order> getUserOrdersDueToDate(Long userId, Date startDate, Date endDate) {
         return OrderDao.getInstance().getItems().stream()
-                .filter(o -> o.getDate().before(date))
+                .filter(o -> o.getDate().after(startDate) && o.getDate().before(endDate))
                 .filter(o -> o.getUser().getId().equals(userId))
                 .collect(Collectors.toList());
     }
 
     @Override
-    public Object generateBill(Long userId, Date date) {
-        List<Order> orderList = getUserOrdersDueToDate(userId, date);
+    public Object generateBill(Long userId, Date startDate, Date endDate) {
+        List<Order> orderList = getUserOrdersDueToDate(userId, startDate, endDate);
 
         List<String> stringList = new ArrayList<>();
         Bill bill = new Bill();
+
         orderList.forEach(elem -> {
             elem.getDishes().forEach(dish -> {
                 stringList.add(dish.getName());
             });
         });
 
-        bill.setOrderedPosition(stringList);
-        bill.setGeneratedDate(new Date());
-        bill.setOrderDate(date);
-        bill.setPrice(countAll(orderList));
-        if (bill.getPrice().equals(0F)) {
+        if (orderList.isEmpty()) {
             bill.setAdditionalInformation("Brak zamówień w wybranym terminie.");
         }
+
+        bill.setOrderedPosition(stringList);
+        bill.setGeneratedDate(new Date());
+        bill.setStartDate(startDate);
+        bill.setEndDate(endDate);
+        bill.setPrice(countAll(orderList));
+
         return bill;
     }
 
     private Float countAll(List<Order> orderList) {
+        System.out.println(orderList.toString());
+        if (!orderList.isEmpty())
+            System.out.println(orderList.get(0).getStatus());
         return (float) orderList.stream().mapToDouble(Order::getPrice).sum();
     }
 

@@ -3,17 +3,74 @@
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
       <artifact name="business-logic-implementation:jar" />
+      <artifact name="business-logic-rest:war" />
+      <artifact name="business-logic-soap:war" />
       <artifact name="client-application:war" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="df6b4aa0-1a96-4129-a4be-3d758c33ef59" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/business_logic_implementation_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/business_logic_implementation_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/business-logic-rest/src/main/java/pl/agh/kis/soa/catering/server/rest/Server.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/business-logic-rest/src/main/java/pl/agh/kis/soa/catering/server/rest/services/CategoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/business-logic-rest/src/main/webapp/WEB-INF/jboss-web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/business-logic-rest/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/business-logic-soap/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/business-logic-soap/src/main/java/pl/agh/kis/soa/server/soap/implementations/DishSoapServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/business-logic-soap/src/main/java/pl/agh/kis/soa/server/soap/interfaces/DishSoapService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/business-logic-soap/src/main/webapp/WEB-INF/jboss-web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/business-logic-soap/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-application/src/main/java/pl/agh/kis/soa/catering/managers/MenuManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-application/src/main/java/pl/agh/kis/soa/catering/managers/ModifyMenuManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-application/src/main/java/pl/agh/kis/soa/catering/managers/UserManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-application/src/main/java/pl/agh/kis/soa/catering/utils/Bill.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-rest/src/main/java/pl/agh/kis/soa/catering/RestClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-soap/src/main/java/pl/agh/kis/soa/server/soap/client/DishSoapServiceClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-soap/src/main/java/pl/agh/kis/soa/server/soap/implementations/DishSoapService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-soap/src/main/java/pl/agh/kis/soa/server/soap/implementations/DishSoapServiceImplService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-soap/src/main/java/pl/agh/kis/soa/server/soap/interfaces/AddDishToCategory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-soap/src/main/java/pl/agh/kis/soa/server/soap/interfaces/AddDishToCategoryResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-soap/src/main/java/pl/agh/kis/soa/server/soap/interfaces/ObjectFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client-soap/src/main/java/pl/agh/kis/soa/server/soap/interfaces/package-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/api/IUserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/api/IUserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/implementation/MainManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/implementation/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/implementation/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/business-logic-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/business-logic-api/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/api/IDishRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/api/IDishRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/api/IOrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/api/IOrderRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/model/AbstractModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/model/AbstractModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/model/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/model/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/model/Dish.java" beforeDir="false" afterPath="$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/model/Dish.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/model/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/model/Subscription.java" beforeDir="false" afterPath="$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/model/Subscription.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/utils/OrderStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/utils/OrderStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/business-logic-api/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/business-logic-api/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/dao/AbstractModelDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/dao/AbstractModelDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/dao/CategoryDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/dao/CategoryDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/dao/DishDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/dao/DishDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/dao/OrderDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/dao/OrderDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/dao/SubscriptionDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/dao/SubscriptionDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/dao/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/implementation/DishRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/implementation/DishRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/implementation/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/implementation/OrderRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/utils/Bill.java" beforeDir="false" afterPath="$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/utils/Bill.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/utils/LoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/utils/LoginService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/business-logic-rest/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/business-logic-rest/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-application/src/main/java/pl/agh/kis/soa/catering/managers/LoginManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/client-application/src/main/java/pl/agh/kis/soa/catering/managers/LoginManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-application/src/main/java/pl/agh/kis/soa/catering/managers/MainManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/client-application/src/main/java/pl/agh/kis/soa/catering/managers/MainManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-application/src/main/java/pl/agh/kis/soa/catering/utils/InitDatabase.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-application/src/main/webapp/add_category.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/client-application/src/main/webapp/add_category.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-application/src/main/webapp/add_dish.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/client-application/src/main/webapp/add_dish.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-application/src/main/webapp/bill.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/client-application/src/main/webapp/bill.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-application/src/main/webapp/catering_current_order.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/client-application/src/main/webapp/catering_current_order.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-application/src/main/webapp/catering_products.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/client-application/src/main/webapp/catering_wall.xhtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client-application/src/main/webapp/index.xhtml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-application/src/main/webapp/login.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/client-application/src/main/webapp/login.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-application/src/main/webapp/user_panel.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/client-application/src/main/webapp/user_panel.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client-rest/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/client-rest/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -24,6 +81,7 @@
     <ignored path="$PROJECT_DIR$/client-rest/target/" />
     <ignored path="$PROJECT_DIR$/client-soap/target/" />
     <ignored path="$PROJECT_DIR$/dish-supplier/target/" />
+    <ignored path="$PROJECT_DIR$/business-logic-soap/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +92,17 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client-rest/src/main/java/pl/agh/kis/soa/catering/RestClient.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -158,6 +226,41 @@
               <item name="Catering_SOA_AGH" type="b2602c69:ProjectViewProjectNode" />
               <item name="Catering_SOA_AGH" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Catering_SOA_AGH" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Catering_SOA_AGH" type="462c0819:PsiDirectoryNode" />
+              <item name="client-rest" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Catering_SOA_AGH" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Catering_SOA_AGH" type="462c0819:PsiDirectoryNode" />
+              <item name="client-rest" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Catering_SOA_AGH" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Catering_SOA_AGH" type="462c0819:PsiDirectoryNode" />
+              <item name="client-rest" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Catering_SOA_AGH" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Catering_SOA_AGH" type="462c0819:PsiDirectoryNode" />
+              <item name="client-rest" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Catering_SOA_AGH" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Catering_SOA_AGH" type="462c0819:PsiDirectoryNode" />
+              <item name="client-rest" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="catering" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -196,13 +299,45 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.DishSoapServiceClient">
+    <configuration name="DishSoapServiceClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="pl.agh.kis.soa.server.soap.client.DishSoapServiceClient" />
+      <module name="client-soap" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pl.agh.kis.soa.server.soap.client.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RestClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="pl.agh.kis.soa.catering.RestClient" />
+      <module name="client-rest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pl.agh.kis.soa.catering.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="JBoss 8.0.0.Final" type="JBossConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="JBoss 8.0.0.Final" ALTERNATIVE_JRE_ENABLED="false">
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/login.xhtml" />
       <option name="BROWSER_ID" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="business-logic-implementation:jar">
+          <settings />
+        </artifact>
+        <artifact name="business-logic-rest:war">
+          <settings />
+        </artifact>
+        <artifact name="business-logic-soap:war">
           <settings />
         </artifact>
         <artifact name="client-application:war">
@@ -270,10 +405,23 @@
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
           <artifact name="business-logic-implementation:jar" />
+          <artifact name="business-logic-rest:war" />
+          <artifact name="business-logic-soap:war" />
           <artifact name="client-application:war" />
         </option>
       </method>
     </configuration>
+    <list>
+      <item itemvalue="JBoss Server.JBoss 8.0.0.Final" />
+      <item itemvalue="Application.RestClient" />
+      <item itemvalue="Application.DishSoapServiceClient" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.DishSoapServiceClient" />
+        <item itemvalue="Application.RestClient" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -337,14 +485,22 @@
       <option name="project" value="LOCAL" />
       <updated>1560752021912</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="merge">
+      <created>1560752137450</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1560752137450</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28669000" />
+    <option name="totallyTimeSpent" value="29137000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1166" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Image Layers" order="0" />
       <window_info id="UI Designer" order="1" />
@@ -401,13 +557,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="merge" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/business-logic-api/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="42" column="21" selection-start-line="42" selection-start-column="21" selection-end-line="42" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/business-logic-rest/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -831,6 +980,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1738">
           <caret line="191" column="66" selection-start-line="191" selection-start-column="66" selection-end-line="191" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client-rest/src/main/java/pl/agh/kis/soa/catering/RestClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
         </state>
       </provider>
     </entry>

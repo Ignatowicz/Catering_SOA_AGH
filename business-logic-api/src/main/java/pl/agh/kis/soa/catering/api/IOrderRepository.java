@@ -26,7 +26,7 @@ public interface IOrderRepository {
 
     List<Object> getUserOrders(Long userId);
 
-    List<Order> getUserOrdersDueToDate(Long userId, Date date);
+    List<Order> getUserOrdersDueToDate(Long userId, Date startDate, Date endDate);
 
-    Object generateBill(Long userId, Date date);
+    Object generateBill(Long userId, Date startDate, Date endDate);
 }

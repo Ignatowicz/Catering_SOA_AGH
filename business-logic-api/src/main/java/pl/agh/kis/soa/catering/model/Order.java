@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -38,5 +39,14 @@ public class Order extends AbstractModel {
 
     @ManyToOne
     private User user;
+
+    public String dishesToString() {
+        StringBuilder sb = new StringBuilder();
+        for (Dish dish : dishes) {
+            sb.append(dish.getName());
+            sb.append(", ");
+        }
+        return sb.toString();
+    }
 
 }

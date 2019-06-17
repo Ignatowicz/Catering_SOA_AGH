@@ -26,7 +26,7 @@ public interface IDishRepository {
 
     List<Object> getTopDishes();
 
-    List<Object> getAllDishesToAccept();
+    List<Dish> getAllDishesToAccept();
 
     List<Object> getAllAcceptedDishes();
 
