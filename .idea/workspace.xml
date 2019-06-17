@@ -3,35 +3,14 @@
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
       <artifact name="business-logic-implementation:jar" />
+      <artifact name="business-logic-rest:war" />
+      <artifact name="business-logic-soap:war" />
       <artifact name="client-application:war" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="df6b4aa0-1a96-4129-a4be-3d758c33ef59" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/model/AbstractModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/model/AbstractModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/model/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/model/Category.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/model/Dish.java" beforeDir="false" afterPath="$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/model/Dish.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/model/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/model/Subscription.java" beforeDir="false" afterPath="$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/model/Subscription.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/business-logic-api/src/main/java/pl/agh/kis/soa/catering/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/dao/AbstractModelDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/dao/AbstractModelDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/dao/CategoryDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/dao/CategoryDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/dao/DishDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/dao/DishDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/dao/OrderDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/dao/OrderDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/dao/SubscriptionDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/dao/SubscriptionDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/business-logic-implementation/src/main/java/pl/agh/kis/soa/catering/dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/business-logic-rest/src/main/java/pl/agh/kis/soa/catering/server/rest/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/business-logic-rest/src/main/java/pl/agh/kis/soa/catering/server/rest/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/business-logic-rest/src/main/java/pl/agh/kis/soa/catering/server/rest/services/CategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/business-logic-rest/src/main/java/pl/agh/kis/soa/catering/server/rest/services/CategoryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/business-logic-rest/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/business-logic-rest/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/business-logic-soap/src/main/java/pl/agh/kis/soa/server/soap/implementations/DishSoapServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/business-logic-soap/src/main/java/pl/agh/kis/soa/server/soap/implementations/DishSoapServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/business-logic-soap/src/main/java/pl/agh/kis/soa/server/soap/interfaces/DishSoapService.java" beforeDir="false" afterPath="$PROJECT_DIR$/business-logic-soap/src/main/java/pl/agh/kis/soa/server/soap/interfaces/DishSoapService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/business-logic-soap/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/business-logic-soap/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-rest/src/main/java/pl/agh/kis/soa/catering/RestClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/client-rest/src/main/java/pl/agh/kis/soa/catering/RestClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-soap/src/main/java/pl/agh/kis/soa/server/soap/implementations/DishSoapService.java" beforeDir="false" afterPath="$PROJECT_DIR$/client-soap/src/main/java/pl/agh/kis/soa/server/soap/implementations/DishSoapService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-soap/src/main/java/pl/agh/kis/soa/server/soap/implementations/DishSoapServiceImplService.java" beforeDir="false" afterPath="$PROJECT_DIR$/client-soap/src/main/java/pl/agh/kis/soa/server/soap/implementations/DishSoapServiceImplService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-soap/src/main/java/pl/agh/kis/soa/server/soap/interfaces/AddDishToCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/client-soap/src/main/java/pl/agh/kis/soa/server/soap/interfaces/AddDishToCategory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-soap/src/main/java/pl/agh/kis/soa/server/soap/interfaces/ObjectFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/client-soap/src/main/java/pl/agh/kis/soa/server/soap/interfaces/ObjectFactory.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -53,95 +32,7 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client-rest/src/main/java/pl/agh/kis/soa/catering/RestClient.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1185">
-              <caret line="79" column="1" selection-start-line="79" selection-start-column="1" selection-end-line="79" selection-end-column="1" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client-soap/src/main/java/pl/agh/kis/soa/server/soap/client/DishSoapServiceClient.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="750">
-              <caret line="50" column="1" selection-start-line="50" selection-start-column="1" selection-end-line="50" selection-end-column="1" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client-soap/src/main/java/pl/agh/kis/soa/server/soap/implementations/DishSoapService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="40" column="1" selection-start-line="40" selection-start-column="1" selection-end-line="40" selection-end-column="1" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client-soap/src/main/java/pl/agh/kis/soa/server/soap/implementations/DishSoapServiceImplService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="873">
-              <caret line="86" column="1" selection-start-line="86" selection-start-column="1" selection-end-line="86" selection-end-column="1" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client-soap/src/main/java/pl/agh/kis/soa/server/soap/interfaces/AddDishToCategory.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-627">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client-soap/src/main/java/pl/agh/kis/soa/server/soap/interfaces/AddDishToCategoryResponse.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client-soap/src/main/java/pl/agh/kis/soa/server/soap/interfaces/ObjectFactory.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="873">
-              <caret line="69" column="1" selection-start-line="69" selection-start-column="1" selection-end-line="69" selection-end-column="1" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/client-soap/src/main/java/pl/agh/kis/soa/server/soap/interfaces/package-info.java">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -290,240 +181,6 @@
               <item name="Catering_SOA_AGH" type="b2602c69:ProjectViewProjectNode" />
               <item name="Catering_SOA_AGH" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Catering_SOA_AGH" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Catering_SOA_AGH" type="462c0819:PsiDirectoryNode" />
-              <item name="business-logic-rest" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Catering_SOA_AGH" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Catering_SOA_AGH" type="462c0819:PsiDirectoryNode" />
-              <item name="business-logic-rest" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Catering_SOA_AGH" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Catering_SOA_AGH" type="462c0819:PsiDirectoryNode" />
-              <item name="business-logic-rest" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Catering_SOA_AGH" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Catering_SOA_AGH" type="462c0819:PsiDirectoryNode" />
-              <item name="business-logic-rest" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Catering_SOA_AGH" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Catering_SOA_AGH" type="462c0819:PsiDirectoryNode" />
-              <item name="business-logic-rest" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="rest" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Catering_SOA_AGH" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Catering_SOA_AGH" type="462c0819:PsiDirectoryNode" />
-              <item name="business-logic-rest" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="rest" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Catering_SOA_AGH" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Catering_SOA_AGH" type="462c0819:PsiDirectoryNode" />
-              <item name="business-logic-rest" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Catering_SOA_AGH" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Catering_SOA_AGH" type="462c0819:PsiDirectoryNode" />
-              <item name="business-logic-rest" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Catering_SOA_AGH" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Catering_SOA_AGH" type="462c0819:PsiDirectoryNode" />
-              <item name="business-logic-soap" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Catering_SOA_AGH" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Catering_SOA_AGH" type="462c0819:PsiDirectoryNode" />
-              <item name="business-logic-soap" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Catering_SOA_AGH" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Catering_SOA_AGH" type="462c0819:PsiDirectoryNode" />
-              <item name="business-logic-soap" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Catering_SOA_AGH" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Catering_SOA_AGH" type="462c0819:PsiDirectoryNode" />
-              <item name="business-logic-soap" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Catering_SOA_AGH" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Catering_SOA_AGH" type="462c0819:PsiDirectoryNode" />
-              <item name="business-logic-soap" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="soap" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Catering_SOA_AGH" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Catering_SOA_AGH" type="462c0819:PsiDirectoryNode" />
-              <item name="business-logic-soap" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="soap" type="462c0819:PsiDirectoryNode" />
-              <item name="implementations" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Catering_SOA_AGH" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Catering_SOA_AGH" type="462c0819:PsiDirectoryNode" />
-              <item name="business-logic-soap" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="soap" type="462c0819:PsiDirectoryNode" />
-              <item name="interfaces" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Catering_SOA_AGH" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Catering_SOA_AGH" type="462c0819:PsiDirectoryNode" />
-              <item name="business-logic-soap" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Catering_SOA_AGH" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Catering_SOA_AGH" type="462c0819:PsiDirectoryNode" />
-              <item name="business-logic-soap" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Catering_SOA_AGH" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Catering_SOA_AGH" type="462c0819:PsiDirectoryNode" />
-              <item name="client-rest" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Catering_SOA_AGH" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Catering_SOA_AGH" type="462c0819:PsiDirectoryNode" />
-              <item name="client-rest" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Catering_SOA_AGH" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Catering_SOA_AGH" type="462c0819:PsiDirectoryNode" />
-              <item name="client-rest" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Catering_SOA_AGH" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Catering_SOA_AGH" type="462c0819:PsiDirectoryNode" />
-              <item name="client-rest" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Catering_SOA_AGH" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Catering_SOA_AGH" type="462c0819:PsiDirectoryNode" />
-              <item name="client-rest" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="catering" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Catering_SOA_AGH" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Catering_SOA_AGH" type="462c0819:PsiDirectoryNode" />
-              <item name="client-soap" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Catering_SOA_AGH" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Catering_SOA_AGH" type="462c0819:PsiDirectoryNode" />
-              <item name="client-soap" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Catering_SOA_AGH" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Catering_SOA_AGH" type="462c0819:PsiDirectoryNode" />
-              <item name="client-soap" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Catering_SOA_AGH" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Catering_SOA_AGH" type="462c0819:PsiDirectoryNode" />
-              <item name="client-soap" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Catering_SOA_AGH" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Catering_SOA_AGH" type="462c0819:PsiDirectoryNode" />
-              <item name="client-soap" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="soap" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Catering_SOA_AGH" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Catering_SOA_AGH" type="462c0819:PsiDirectoryNode" />
-              <item name="client-soap" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="soap" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Catering_SOA_AGH" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Catering_SOA_AGH" type="462c0819:PsiDirectoryNode" />
-              <item name="client-soap" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="soap" type="462c0819:PsiDirectoryNode" />
-              <item name="implementations" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Catering_SOA_AGH" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Catering_SOA_AGH" type="462c0819:PsiDirectoryNode" />
-              <item name="client-soap" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="soap" type="462c0819:PsiDirectoryNode" />
-              <item name="interfaces" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -569,6 +226,12 @@
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="business-logic-implementation:jar">
+          <settings />
+        </artifact>
+        <artifact name="business-logic-rest:war">
+          <settings />
+        </artifact>
+        <artifact name="business-logic-soap:war">
           <settings />
         </artifact>
         <artifact name="client-application:war">
@@ -636,6 +299,8 @@
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
           <artifact name="business-logic-implementation:jar" />
+          <artifact name="business-logic-rest:war" />
+          <artifact name="business-logic-soap:war" />
           <artifact name="client-application:war" />
         </option>
       </method>
@@ -654,7 +319,7 @@
       <workItem from="1560591720492" duration="19518000" />
       <workItem from="1560617644339" duration="4916000" />
       <workItem from="1560690182121" duration="11045000" />
-      <workItem from="1560743271630" duration="7007000" />
+      <workItem from="1560743271630" duration="7306000" />
     </task>
     <task id="LOCAL-00001" summary="database logic">
       <created>1560606354801</created>
@@ -754,11 +419,18 @@
       <option name="project" value="LOCAL" />
       <updated>1560750341477</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="refactor">
+      <created>1560751038374</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1560751038374</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79969000" />
+    <option name="totallyTimeSpent" value="80268000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1166" extended-state="6" />
@@ -782,7 +454,7 @@
       <window_info anchor="bottom" id="Message" order="6" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Find" order="8" weight="0.3291262" />
-      <window_info anchor="bottom" id="Run" order="9" weight="0.43592232" />
+      <window_info anchor="bottom" id="Run" order="9" visible="true" weight="0.43592232" />
       <window_info anchor="bottom" id="Debug" order="10" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
@@ -822,7 +494,8 @@
     <MESSAGE value="subscriptions almost done" />
     <MESSAGE value="subscriptions" />
     <MESSAGE value="merge" />
-    <option name="LAST_COMMIT_MESSAGE" value="merge" />
+    <MESSAGE value="refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/client-application/src/main/webapp/user_panel.xhtml">
@@ -1228,16 +901,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client-rest/src/main/java/pl/agh/kis/soa/catering/RestClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1185">
-          <caret line="79" column="1" selection-start-line="79" selection-start-column="1" selection-end-line="79" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client-soap/src/main/java/pl/agh/kis/soa/server/soap/client/DishSoapServiceClient.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="750">
@@ -1298,6 +961,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client-soap/src/main/java/pl/agh/kis/soa/server/soap/interfaces/package-info.java">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client-rest/src/main/java/pl/agh/kis/soa/catering/RestClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1185">
+          <caret line="79" column="1" selection-start-line="79" selection-start-column="1" selection-end-line="79" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
   </component>
   <component name="masterDetails">
