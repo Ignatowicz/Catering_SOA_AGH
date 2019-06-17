@@ -14,65 +14,59 @@ import java.util.Scanner;
 public class RestClient {
     public static void main(String[] args) {
         Scanner reader = new Scanner(System.in);
+
         int option = 1;
-        Long menuCategoryId;
+        Long categoryId;
 
         while(option != 0) {
-            System.out.println("1: wszystkie kategorie jako json");
-            System.out.println("2: wszystkie kategorie jako xml");
-            System.out.println("3: wybrana kategoria jako json");
-            System.out.println("4: wybrana kategoria jako xml");
+            System.out.print("Język: [pl/en] \n>> ");
+            String language = reader.next();
+
+            System.out.println("1: wszystkie kategorie jako xml");
+            System.out.println("2: wszystkie kategorie jako json");
+            System.out.println("3: wybrana kategoria jako xml");
+            System.out.println("4: wybrana kategoria jako json");
             System.out.print("0: wyjście z programu \n>> ");
 
             option = reader.nextInt();
             switch(option) {
                 case 1:
-                    getAllMenuCategoriesAsJson();
+                    getCategories(language, MediaType.APPLICATION_XML);
                     break;
                 case 2:
-                    getAllMenuCategoriesAsXml();
+                    getCategories(language, MediaType.APPLICATION_JSON);
                     break;
                 case 3:
                     System.out.print("Proszę podać ID kategorii: ");
-                    menuCategoryId = reader.nextLong();
-                    getMenuCategoryByIdAsJson(menuCategoryId);
+                    categoryId = reader.nextLong();
+                    getCategory(categoryId, language, MediaType.APPLICATION_XML);
                     break;
                 case 4:
                     System.out.print("Proszę podać ID kategorii: ");
-                    menuCategoryId = reader.nextLong();
-                    getMenuCategoryByIdAsXml(menuCategoryId);
+                    categoryId = reader.nextLong();
+                    getCategory(categoryId, language, MediaType.APPLICATION_JSON);
                     break;
             }
         }
     }
 
-    private static void getAllMenuCategoriesAsJson() {
+    private static void getCategory(Long categoryId, String language, String mediaType) {
+        ResteasyClient client = new ResteasyClientBuilder().build();
+        ResteasyWebTarget target = client.target("http://localhost:8080/rest/api/category/" + categoryId);
+        Response response = target.request()
+                .accept(mediaType)
+                .header("Accept-Language", language)
+                .get();
+        printResponse(response);
+    }
+
+    private static void getCategories(String language, String mediaType) {
         ResteasyClient client = new ResteasyClientBuilder().build();
         ResteasyWebTarget target = client.target("http://localhost:8080/rest/api/category");
         Response response = target.request()
-                .header("Accept-Language", "en")
-                .accept(MediaType.APPLICATION_JSON).get();
-        printResponse(response);
-    }
-
-    private static void getAllMenuCategoriesAsXml() {
-        ResteasyClient client = new ResteasyClientBuilder().build();
-        ResteasyWebTarget target = client.target("http://localhost:8080/rest/api/category");
-        Response response = target.request().accept(MediaType.APPLICATION_XML).get();
-        printResponse(response);
-    }
-
-    private static void getMenuCategoryByIdAsJson(Long categoryId) {
-        ResteasyClient client = new ResteasyClientBuilder().build();
-        ResteasyWebTarget target = client.target("http://localhost:8080/rest/api/category/" + categoryId);
-        Response response = target.request().accept(MediaType.APPLICATION_JSON).get();
-        printResponse(response);
-    }
-
-    private static void getMenuCategoryByIdAsXml(Long categoryId) {
-        ResteasyClient client = new ResteasyClientBuilder().build();
-        ResteasyWebTarget target = client.target("http://localhost:8080/rest/api/category/" + categoryId);
-        Response response = target.request().accept(MediaType.APPLICATION_XML).get();
+                .accept(mediaType)
+                .header("Accept-Language", language)
+                .get();
         printResponse(response);
     }
 
