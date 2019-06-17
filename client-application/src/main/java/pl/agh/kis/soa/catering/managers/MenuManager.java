@@ -128,30 +128,64 @@ public class MenuManager implements Serializable {
     }
 
     public String makeCyclicOrder(Long userId) {
-        System.out.println(orderDeliver.toString());
         Date orderDate = new Date();
         orderDate.setHours(deliverHour);
         orderDate.setMinutes(deliverMinute);
 
-        if ((endDeliver.getDay() - startDeliver.getDay()) < 0)
-            return redirectToPage("catering_wall");
+        Subscription subscription = new Subscription();
+        subscription.setUser(userRepository.getUser(userId));
+        subscription.setDishes(dishesOrder);
+        subscription.setFrequency("day");
+        subscriptionRepository.addSubscription(subscription);
 
-        for (int i = endDeliver.getDay(); i < startDeliver.getDay(); i++) {
-            Calendar c = Calendar.getInstance();
-            c.setTime(orderDate);
-            c.add(Calendar.DAY_OF_MONTH, i);
-            orderDate= c.getTime();
+        Calendar c = Calendar.getInstance();
+        c.setTime(startDeliver);
+        int start = c.get(Calendar.DAY_OF_MONTH);
+        c.setTime(endDeliver);
+        int end = c.get(Calendar.DAY_OF_MONTH);
 
-            Subscription subscription = new Subscription();
-            subscription.setUser(userRepository.getUser(userId));
-            subscription.setDishes(dishesOrder);
-            subscription.setFrequency("day");
-            subscriptionRepository.addSubscription(subscription);
 
+        for (int i = start; i< end; i++) {
             orderDeliver = orderDate;
             completeOrder(userId);
         }
 
+
+//        Calendar c = Calendar.getInstance();
+//        c.setTime(startDeliver);
+//        int sd = c.get(Calendar.DAY_OF_MONTH);
+//        int sm = c.get(Calendar.MONTH);
+//        int sy = c.get(Calendar.YEAR);
+//        c.setTime(endDeliver);
+//        int ed = c.get(Calendar.DAY_OF_MONTH);
+//        int em = c.get(Calendar.MONTH);
+//        int ey = c.get(Calendar.YEAR);
+//
+//        System.out.println(c.toString());
+//
+//        if ((ey > sy)
+//                || ((ey >= sy)) && (em > sm)
+//                || ((ey >= sy)) && (em >= sm) && (ed > sd)) {
+//
+//            for (int i = sy; i < ey; i++) {
+//                for (int j = sm; j < em; j++) {
+//                    for (int k = sd; k < ed; k++) {
+//                        c.setTime(orderDate);
+//                        c.set(i, j, k);
+//                        orderDate = c.getTime();
+//
+//                        Subscription subscription = new Subscription();
+//                        subscription.setUser(userRepository.getUser(userId));
+//                        subscription.setDishes(dishesOrder);
+//                        subscription.setFrequency("day");
+//                        subscriptionRepository.addSubscription(subscription);
+//
+//                        orderDeliver = orderDate;
+//                        completeOrder(userId);
+//                    }
+//                }
+//            }
+//        }
         clearAll();
         return redirectToPage("catering_wall");
     }
